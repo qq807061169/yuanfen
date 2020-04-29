@@ -1,0 +1,117 @@
+<!--pages/selectwater/index.wxml-->
+<block wx:if='{{!show}}'>
+  <loading>加载中...</loading>
+</block>
+
+<component_adv text="{{sueeid}}" id="myComponent"/>
+
+<block wx:if='{{is_achieve == 1}}'>
+<view class='ysj-showModal' wx:if='{{!showModal}}'>
+<view class='achieve_msg-modal'>
+</view>
+  <view class='ysj-Modal-wrap'>
+    <view class='Modal-Font'>{{achieve_msg}}</view>
+    <image  mode='widthFix' src='/static/images/icon-green/modal.png' class='modal-img'></image>
+    <image mode='widthFix' src='/static/images/icon-green/gb.png' class='modal-out' bindtap='modal_out'></image>
+  </view>
+</view>
+</block>
+
+<block wx:if='{{modal == true}}'>
+<view class='ysj-showModal' wx:if='{{!showModal}}'>
+<view class='achieve_msg-modal'>
+</view>
+  <view class='ysj-Modal-wrap'>
+    <view class='Modal-Font'>{{achieve_msgs}}</view>
+    <image  mode='widthFix' src='/static/images/icon-green/modal.png' class='modal-img'></image>
+    <image mode='widthFix' src='/static/images/icon-green/gb.png' class='modal-out' bindtap='modal_out'></image>
+    <view class='Modal-font-info'>恭喜您获得{{point}}个水币</view>
+  </view>
+</view>
+</block>
+
+<block wx:if='{{show}}'>
+<view class="body" id='body'>
+  <view class="head">
+    <image style="width: 100%;" mode='widthFix' src="/static/images/icon-green/img_bg.jpg"></image>
+    <!-- <view class="quality" style="margin-left: -{{waterWidth}}px;">
+      <image class="warerdrop" mode='widthFix' src="/static/images/icon-green/img_waterdrop.png"></image>
+      <text class="qualitys">{{quality}}</text>
+      <text class="tds" style="left:{{tdslen>2?'4%':'5%'}};">TDS值：{{tds}}</text>
+    </view> -->
+
+    <view class='ysj-quality'>
+        <image class='quality-left' src='/static/images/icon-green/yuan.png'  mode='widthFix'></image>
+        <image class='quality-centent' src='/static/images/icon-green/yuhu.png'  mode='widthFix'></image>
+        <image class='quality-right' src='/static/images/icon-green/chu.png'  mode='widthFix'></image>
+        <image class="warerdrop" mode='widthFix' src="/static/images/icon-green/img_waterdrop.png"></image>
+        <view class='qualitys'>{{quality}}</view>
+        <view class='qualitys-tds'>净化前TDS：{{intds}}</view>
+        <view class='qualitys-intds'>净化后TDS：{{tds}}</view>
+    </view>
+     <!-- <view class='tips'>
+      
+     </view> -->
+
+    <view class="explain">
+      <text class="title">*温馨提示：</text>
+      <text class="content">支付完成后，请按机器上红蓝按钮出水，其中红色代表<text>热水</text>，蓝色代表<text>常温水</text>，再次按压即停止出水，在<text class='color-red'>中断取水{{outtime}}S后</text>，设备会自动清零该次饮水信息，谢谢您的配合与理解</text>
+    </view>
+    <!-- <view class="quality-num">
+      <text>请选择水量：</text>
+      <block wx:if="{{quality_num}}">
+      <input type="text" style="flex-grow: 1; font-size: 32rpx;"  value="{{quality_num}}ml" disabled='disabled' />
+      </block>
+    </view> -->
+
+    <view class='ysj-num'>
+      <view class='attribute'>
+        <view class="{{attribute==0?'num-active':''}}" data-id="0" bindtap='btnwen'>常温水</view>
+        <view class="{{attribute==1?'num-active':''}}" data-id="1" bindtap='btnhot'>热水</view>
+      </view>
+      <view class='yjs-quality'>
+       <block wx:if="{{quality_num==''}}">
+        <input type='text' value="{{quality_num}}" placeholder='请选择购买水量' disabled='disabled'></input>
+        </block>
+          <block wx:else>
+        <input type='text' value="{{quality_num}}ml" placeholder='请选择购买水量' disabled='disabled'></input>
+          </block>
+      </view>
+    </view>
+
+  </view>
+
+
+  <!-- 冷水 -->
+  <block wx:if="{{attribute==0}}">
+  <view class="select">
+    <block wx:for="{{cold_package}}">
+      <button data-id="{{item.id}}" data-value="{{item.number}}" data-amount="{{item.amount}}"  data-time="{{item.out_time}}" hover-class='none' class="button selected {{quality_default==item.id?'selecting':''}}" bindtap='select'>
+        <text class="milliliter">{{item.number}}ml</text>
+        <text class="amount">{{item.amount}}元</text>
+      </button>
+    </block>
+  </view>
+</block>
+ <block wx:else>
+  <!-- 热水 -->
+<view class="select">
+    <block wx:for="{{hot_package}}">
+      <button data-id="{{item.id}}" data-value="{{item.number}}" data-amount="{{item.amount}}"  data-time="{{item.out_time}}" hover-class='none' class="button selected {{quality_default==item.id?'selecting':''}}" bindtap='select'>
+        <text class="milliliter">{{item.number}}ml</text>
+        <text class="amount">{{item.amount}}元</text>
+      </button>
+    </block>
+  </view>
+ </block>
+
+  <button class="button buynow" bindtap='buy' disabled="{{disb}}">立即购买</button>
+</view>
+<view class='ysj-height'></view>
+<!--tabber.wxml-->
+<!-- <view class="container">
+  <import src="/tabbar.wxml" />
+  <template is="tabBar" data="{{tabBar}}" />
+</view> -->
+ <component_tabbar/>
+ </block>

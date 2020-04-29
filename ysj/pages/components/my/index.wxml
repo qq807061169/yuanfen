@@ -1,0 +1,82 @@
+<!--pages/components/my/index.wxml-->
+<!--pages/index/index.wxml-->
+
+<block wx:if='{{!show}}'>
+  <loading>加载中...</loading>
+</block>
+<block wx:if='{{show}}'>
+<view class="body">
+  <navigator hover-class='none' class="member">
+    <view class="logo">
+      <!-- <block wx:if="{{canIUse}}">
+        <open-data type="userAvatarUrl"></open-data>
+      </block>
+      <block wx:else>
+        <image mode="widthFix" src="/static/images/noface.png" style="border-radius: 50%;"></image>
+      </block> -->
+      <block wx:if="{{user}}">
+        <image mode="widthFix" src="{{user.avatarurl}}" style="border-radius: 50%;"></image>
+      </block>
+      <block wx:else>
+        <image mode="widthFix" src="/static/images/noface.png" style="border-radius: 50%;"></image>
+      </block>
+    </view>
+    <view class="name">
+      <block wx:if="{{canIUse}}">
+        {{user.nickname}}【ID:{{user.id}}】
+      </block>
+      <view class='userLevel'>
+        {{user.member_name}}
+      </view>
+    </view>
+  </navigator>
+  <view class="tab">
+    <navigator hover-class='none' class="myorder" url="/pages/member/wallet/index">
+      <image mode="widthFix" class="icon" src="/static/images/icon-green/img_wallet.png" style=""></image>
+      <text style="flex-grow: 1;">我的钱包</text>
+      <text style="color: #b5b5b5;">可用余额{{user.amountbalance}}元 </text>
+      <image mode="widthFix" src="/static/images/icon/right.png" class="right-icon"></image>
+    </navigator>
+    <navigator hover-class='none' class="myorder" url="/pages/member/coin/index">
+      <image mode="widthFix" class="icon" src="/static/images/icon-green/money.png" style=""></image>
+      <text style="flex-grow: 1;">我的水币</text>
+      <text style="color: #b5b5b5;">可用水币{{user.point}}元 </text>
+      <image mode="widthFix" src="/static/images/icon/right.png" class="right-icon"></image>
+    </navigator>
+     <navigator hover-class='none' class="myorder" url="/pages/member/integral/index">
+      <image mode="widthFix" class="icon" src="/static/images/icon-green/jf.png" style=""></image>
+      <text style="flex-grow: 1;">我的积分</text>
+      <text style="color: #b5b5b5;">积分{{user.credits}}个</text>
+      <image mode="widthFix" src="/static/images/icon/right.png" class="right-icon"></image>
+    </navigator>
+     <navigator hover-class='none' class="myorder" url="/pages/order/index">
+      <image mode="widthFix" class="icon" src="/static/images/icon-green/img_orders.png" style=""></image>
+      <text style="flex-grow: 1;">我的订单</text>
+      
+      <image mode="widthFix" src="/static/images/icon/right.png" class="right-icon"></image>
+      <!-- <text style="color: #b5b5b5;">可用余额100.00元 </text> -->
+      <!-- <image mode="widthFix" src="/static/images/icon/right.png" class="right-icon"></image> -->
+    </navigator>
+    <navigator hover-class='none' class="myorder" url="/pages/topup/index">
+      <image mode="widthFix" class="icon" src="/static/images/icon-green/hd.png" style=""></image>
+      <text style="flex-grow: 1;">充值活动</text>
+      <image mode="widthFix" src="/static/images/icon/right.png" class="right-icon"></image>
+    </navigator>
+    <navigator hover-class='none' class="myorder" url="/pages/equipment/list/index">
+      <image mode="widthFix" class="icon" src="/static/images/icon-green/sb.png" style=""></image>
+      <text style="flex-grow: 1;">设备管理</text>
+      <image mode="widthFix" src="/static/images/icon/right.png" class="right-icon"></image>
+    </navigator>
+    <navigator hover-class='none' class="myorder" url="/pages/member/invitation/index">
+      <image mode="widthFix" class="icon" src="/static/images/icon-green/yq.png" style=""></image>
+      <text style="flex-grow: 1;">邀请有礼</text>
+      <!-- <text style="color: #b5b5b5;">积分{{user.credits}}个</text> -->
+      <image mode="widthFix" src="/static/images/icon/right.png" class="right-icon"></image>
+    </navigator>
+    <!-- <button open-type="contact"  class="myorder contacts">
+    <image mode="widthFix" class="icon" src="/static/images/icon-green/contacts.png" style=""></image>
+      <text style="flex-grow: 1;">在线客服</text>
+    </button> -->
+  </view>
+</view>
+</block>

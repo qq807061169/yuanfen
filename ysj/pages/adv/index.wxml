@@ -1,0 +1,22 @@
+<!--pages/adv/index.wxml-->
+<!-- 充值活动弹出 -->
+<template name="msgItem">
+<block wx:if="{{activity == true}}">
+  <view class="achieve_msg-modal"></view>
+  <view class="activity_modal">
+      <swiper
+       previous-margin="{{previousMargin}}px" indicator-dots="true" indicator-color="#ccc" indicator-active-color="#f6f6f6"	 next-margin="{{nextMargin}}px" style="height:100%;border-radius:7px;">
+        <block wx:for="{{getadv}}" wx:key="*this">
+          <swiper-item style="border-radius:7px">
+          <image class="" src="{{item.thumb}}"></image>
+          <navigator url="{{item.link}}" open-type="navigate" class="button ljcz"  bindtap="nav_btg">{{item.button}}</navigator>
+          </swiper-item>
+          
+        </block>
+      </swiper>
+      <view class="gb" bindtap="gb_btrn" >
+        <image src="/static/images/icon-green/guanbi.png" mode="widthFix"></image>
+      </view>
+  </view>
+</block>
+</template>

@@ -1,0 +1,32 @@
+<!--pages/topup_list/index.wxml-->
+<loading wx:if="{{!shows}}">加载中...</loading>
+<view class="bodys" wx:if="{{shows}}">
+  <block wx:for="{{list}}">
+  <view class="topup_list" bindtap="btn_content" data-content="{{item}}">
+    <view class="link">
+        <view class="left f1 left_25"> 订单号：{{item.orderno}}</view>
+        <view class="right right_25">
+          <block wx:if="{{item.paystatus == 1}}">
+            <text style="color:#8bc43f">已支付</text>
+          </block>
+          <block wx:if="{{item.paystatus == 0}}">
+           <text style="color:#a5a5a5">未支付</text>
+          </block>
+        </view>
+    </view>
+    <view class="content">
+      <view class="money">总价：￥{{item.money}}</view>
+      <view class="data">下单时间：{{item.createtime}}</view>
+      <block wx:if="{{item.paystatus == 1}}">
+      <view class="btn_navDet" catchtap="btn_navDet" data-orderno="{{item.orderno}}">返还明细</view>
+       </block>
+    </view>
+  </view>
+</block>
+<block wx:if="{{list == ''}}">
+<view class="notinfomessage"  >
+  <image mode="widthFix" src="/static/images/icon-green/img_order_empty.png"></image>
+  <text>暂无订单</text>
+</view>
+</block>
+</view>

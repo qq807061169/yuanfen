@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "component_tabbar": "/pages/components/tabbar/index",
+    "component_adv": "/pages/components/adv/index"
+  },
+  "navigationBarTitleText": "咕咚共享饮水",
+  "navigationBarBackgroundColor": "#528921",
+  "navigationBarTextStyle": "white"
+}

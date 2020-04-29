@@ -1,0 +1,177 @@
+/* pages/intake/index.wxss */
+page{
+  overflow: hidden
+}
+.body {
+  width: 100%;
+  overflow: hidden;
+}
+.head {
+  position: relative;
+}
+.head .quality {
+  width:100%;
+  position:absolute;
+  top:9%;
+  left:50%;
+}
+.quality image {
+  width: 30%;
+}
+.quality .qualitys {
+  font-size:70rpx;
+  color:#fff;
+  position:absolute;
+  top:25%;
+  left:10%;
+}
+.quality .tds {
+  font-size:32rpx;
+  color:#fff;
+  position:absolute;
+  bottom:20%;
+  left:5%;
+}
+.other {
+  width: 75%;
+  border-radius: 15rpx;
+  font-size: 34rpx;
+  padding: 20rpx 30rpx 20rpx;
+  box-shadow: 4rpx 4rpx 4rpx #c4e1f4;
+  position:absolute;
+  bottom:-21%;
+  background:#fff;
+  left:9%;
+  line-height: 2;
+}
+.explain {
+  font-size:30rpx;
+  color:#fff;
+  position:absolute;
+  bottom:38%;
+  width:80%;
+  margin:0 auto;
+  left:12%;
+}
+.explain .title {
+  display: block;
+}
+.explain .color-red{
+  color: #db5a6e
+}
+.quality-num {
+  padding-bottom: 10rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.quality-balance {
+  padding-top: 10rpx;
+}
+.quality-num, .quality-balance {
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+}
+.quality-num text:nth-child(2), .quality-balance text:nth-child(2) {
+  flex-grow: 1;
+  margin-left: 10rpx;
+  color: #b5b5b5;
+}
+.quality-num text:last-child {
+  color: #528921;
+}
+.quality-balance text:last-child {
+  color: #528921;
+}
+.tips {
+  font-size:30rpx;
+  width:80%;
+  margin:180rpx auto 0;
+  color:#c2c2c2;
+  line-height:1.6;
+
+}
+.tips .title {
+  display: block;
+}
+.btn-grow {
+  margin: 150rpx 0 200rpx;
+  text-align: center;
+  overflow: hidden
+}
+.btn-grow .button {
+  display: inline-block;
+  font-size: 32rpx;
+  padding:0 80rpx;
+  line-height:2.5;
+  margin:170rpx 5%;
+}
+.stop {
+  background-color: #528921;
+  color: #fff;
+}
+.recharge {
+  background-color: #fff;
+  color: #528921;
+  border: 2rpx solid #528921;
+}
+.quality-left{
+  position: absolute;
+  top: 484rpx;
+  left: 19rpx;
+  width: 220rpx;
+}
+.quality-centent{
+  position: absolute;
+  top: 127%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+    width: 276rpx;
+}
+.ysj-quality{position: absolute;top: 29rpx;width: 100%;height: 500rpx;z-index: 999999}
+.quality-right{
+   position: absolute;
+  top: 484rpx;
+  right: 20rpx;
+  width: 216rpx;
+}
+.warerdrop{
+  position: absolute;
+  top:100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 30%; 
+}
+.qualitys{
+  font-size:70rpx;
+  color:#fff;
+  position:absolute;
+  top:91%;
+  left:45%;
+}
+.qualitys-tds{
+  position:absolute;
+    font-size: 26rpx;
+   top: 98.5%;
+   left: 3.5%;
+   color: #f8f7fe;
+}
+.qualitys-intds{
+   position:absolute;
+    font-size: 26rpx;
+   top: 98.5%;
+    left: 69.8%;
+   color: #fdfdfe;
+}
+
+
+/* .bgs{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -999;
+  background: #528921;
+} */

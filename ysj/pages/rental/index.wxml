@@ -1,0 +1,40 @@
+<!--pages/intake/index.wxml-->
+<view class="body">
+<view class='bgs'>
+
+  <view class="head">
+    <image style="width: 100%;height:{{windowHeight}}px;" class='bgss'  src="/static/images/icon-green/img_bg.jpg"></image>
+    <!-- <view class="quality" style="margin-left: -{{waterWidth}}px;">
+      <image class="warerdrop" mode='widthFix' src="/static/images/icon-green/img_waterdrop.png"></image>
+      <text class="qualitys">{{quality}}</text>
+      <text class="tds" style="left:{{tdslen>2?'4%':'5%'}};">TDS值：{{tds}}</text>
+    </view> -->
+
+    <view class='ysj-quality'>
+        <image class='quality-left' src='/static/images/icon-green/yuan.png'  mode='widthFix'></image>
+        <image class='quality-centent' src='/static/images/icon-green/yuhu.png'  mode='widthFix'></image>
+        <image class='quality-right' src='/static/images/icon-green/chu.png'  mode='widthFix'></image>
+        <image class="warerdrop" mode='widthFix' src="/static/images/icon-green/img_waterdrop.png"></image>
+        <view class='qualitys'>{{quality}}</view>
+        <view class='qualitys-tds'>原水TDS值：{{intds}}</view>
+        <view class='qualitys-intds'>净水TDS值：{{tds}}</view>
+    </view>
+    <view class="explain">
+      <text class="title">*温馨提示：</text>
+      <text class="content">本设备为租赁模式，请直接按键取水</text>
+    </view>
+    
+  </view>
+  <!-- <view class="tips">
+    <text class='title'>*提示： </text>
+    <text>本设备为租赁模式，请直接按键取水</text>
+  </view> -->
+ 
+  </view>
+</view>
+<!--tabber.wxml-->
+<!-- <view class="container">
+  <import src="/tabbar.wxml" />
+  <template is="tabBar" data="{{tabBar}}" />
+</view> -->
+ <component_tabbar/>

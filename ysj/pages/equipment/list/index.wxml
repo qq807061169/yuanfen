@@ -1,0 +1,36 @@
+<!--pages/equipment/list/index.wxml-->
+<loading wx:if="{{!show}}">加载中...</loading>
+<view class="main" wx:if='{{show}}'>
+  <view class="search">
+    <input type="text" placeholder="搜索设备" bindinput="searchKey" ></input>
+  </view>
+  <view class="position_flex" bindtap="btnbindDevice">
+    +
+  </view>
+    <block wx:if="{{list.length>0}}">
+  <text class="title">设备列表</text>
+
+    <view class="eqItem">
+      <block wx:for="{{list}}">
+        <view class="list" bindtap="clickItem" data-id="{{item.deviceid}}" data-number="{{item.number}}" data-name="{{item.name}}" data-date="{{item.endtime}}" >
+          <view class="line"></view>
+          <view class="desc">
+            <view class="title">{{item.name}}</view>
+            <view class="info">到期 {{item.endtime}} 剩余用水量 {{item.number}}</view>
+          </view>
+          <view class="det">
+            -
+          </view>
+        </view>
+      </block>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="view_box">
+    <image src="/static/images/icon/sb.png" mode="widthFix"></image>
+     
+      <!-- <view> 暂无设备</view> -->
+    </view>
+  </block>
+
+</view>

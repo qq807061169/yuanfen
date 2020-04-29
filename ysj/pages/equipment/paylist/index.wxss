@@ -1,0 +1,37 @@
+/* pages/equipment/paylist/index.wxss */
+.view_box{
+  /* display: flex; */
+  width: 100%;
+  height: 100%;
+  /* align-items: center; */
+  /* justify-content: center; */
+  margin: 200rpx auto 0;
+  font-size: 32rpx;
+  text-align: center;
+  color: #666;
+}
+.view_box image{
+  width: 150rpx;
+}
+page{
+  background: #f3f3f3
+}
+.item{
+  width: 90%;
+  margin: 20rpx auto;
+}
+.item .list{
+ padding: 20rpx;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 6px;
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+}
+.item .list .order_number{
+  color: #9e9e9e;
+  line-height: 50rpx;
+}
+.font_number{
+  color: #222222
+}

@@ -1,0 +1,64 @@
+/* pages/member/invitation/index.wxss */
+.modal_lin{
+  display: flex;
+  align-items: center;
+  padding: 40rpx 0;
+  font-size: 34rpx;
+}
+.main{
+  width: 94%;
+  margin: 0 auto;
+}
+.modal_lin .lin{
+  width: 10rpx;
+  height: 35rpx;
+  background: #528921;
+  margin-right: 20rpx;
+}
+.inv_main {
+  border-radius: 30rpx;
+  padding: 30rpx;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+page{
+  background: #f2f2f2;
+}
+.inv_main .left .font{
+  color: #666;
+  font-size: 32rpx;
+  margin-bottom: 10rpx;
+}
+.inv_main .left .info .color_red{
+  color: #fc5144;
+  font-size: 38rpx;
+}
+.inv_main .right button{
+  font-size: 32rpx;
+  padding: 15rpx;
+  background: #fc5144;
+  color: #fff;
+}
+.m__mai{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.m__mai .item{
+  text-align: center;
+  /* border-right: 1px solid #fff; */
+  display: block;
+}
+
+.m__mai .item .number{
+  margin-bottom: 15rpx;
+}
+.m__mai .item .font{
+  color: #666666;
+  font-size: 32rpx;
+} 
+.headImg image{
+  width: 100%;
+}

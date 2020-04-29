@@ -1,0 +1,56 @@
+/* pages/adv/index.wxss */
+.achieve_msg-modal{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.5;
+  z-index: 99;
+}
+.activity_modal{
+  width: 650rpx;
+  position: fixed;
+  top: -125rpx;
+  /* left: 50rpx; */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height: 750rpx;
+  z-index: 100
+}
+activity_modal swiper {
+  height: 100% !important;
+}
+.activity_modal image{
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.activity_modal .ljcz{
+  width: 70%;
+  left: 15%;
+  height: 75rpx;
+  line-height: 70rpx;
+  background: #fff;
+  color: #404040;
+  position: absolute;
+  z-index: 2;
+  bottom: 70rpx;
+  border-radius: 30px;
+  text-align: center;
+
+}
+.gb{
+  width: 85rpx;
+  left: 43%;
+  /* height: 75rpx; */
+  line-height: 75rpx;
+  color: #404040;
+  position: absolute;
+  z-index: 2;
+  bottom: -110rpx;
+  border-radius: 30px;
+  background: transparent
+}

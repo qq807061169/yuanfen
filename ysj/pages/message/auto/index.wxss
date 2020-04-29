@@ -1,0 +1,145 @@
+/* pages/message/auto/index.wxss */
+.auto_body{
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 1;
+  height: 800rpx;
+  background: #ffff;
+  border-radius: 6px;
+ width: 600rpx;
+ left: 75rpx;
+ top: 100rpx;
+}
+.image{
+  width: 30%;
+  padding:15% 35%;
+  border-bottom:2rpx solid #b5b5b5;
+}
+.text{
+  font-size: 32rpx;
+  line-height: 2;
+  margin: 80rpx 0;
+}
+.text text{
+  display: block;
+}
+.text text:nth-child(2){
+  color: #b5b5b5;
+}
+.btn .button{
+  font-size: 38rpx;
+  background: #00a600;
+  color: #fff;
+  line-height: 2;
+}
+.btn .button:nth-child(2){
+  margin-top: 20rpx;
+}
+.content{
+  position: fixed;
+  z-index: 99;
+  background: #fff;
+}
+.modal_M{
+  width: 100%;
+  position: fixed;
+  height: 100%;
+  background: #000;
+  opacity: .6;
+}
+
+/* pages/components/my/index.wxss */
+.body{
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+}
+image {
+  width: 100%;
+}
+.icon {
+  width: 5%;
+  margin: 0 30rpx;
+}
+.right-icon {
+  width: 2%;
+  margin: 0 20rpx 0 10rpx;
+}
+.member {
+  width: 100%;
+  padding: 30rpx;
+  margin-top: 10rpx;
+  border-bottom: 2rpx solid #efefef;
+  display: flex;
+  align-items: center;
+}
+.logo {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.name {
+  margin: 0 50rpx;
+  padding: 10rpx;
+  height: 45rpx;
+  line-height: 45rpx;
+  /* width: 163rpx;
+  border: 1px solid #ccc; */
+  text-align: center;
+  border-radius: 6px;
+}
+.tab {
+  line-height: 3;
+  font-size: 32rpx;
+}
+.tab navigator, .tab button{
+  height: 95rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 2rpx solid #efefef;
+}
+.other {
+  border-bottom: 0;
+}
+.userLevel{
+  font-size: 28rpx;
+  color: #333
+}
+.contacts{
+  height: 96rpx;
+   background-color: #fff;
+  border: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  border-radius: none;
+  text-align: left;
+  font-size: 32rpx;
+  color: #333
+}
+.contacts::after {
+  border: none;
+}
+
+.left{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 250rpx;
+  height: 100rpx;
+  z-index: 100000;
+  background: transparent;
+
+}
+.right{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 250rpx;
+  height: 100rpx;
+  z-index: 100000;
+  background: transparent;
+
+}

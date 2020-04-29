@@ -1,0 +1,50 @@
+<!--pages/buysuccess/index.wxml-->
+<!--pages/selectwater/index.wxml-->
+<view class="body">
+  <view class="head">
+    <view class="success">
+      <block wx:if="{{statusval==''}}">
+      <image mode='widthFix' src="/static/images/icon-green/show_is.gif"></image>
+      <text class="get_success" style='font-size:40rpx;color:#db5a6e;'>{{water_state}}</text>
+      </block>
+      <block wx:elif="{{statusval==0}}">
+      <image mode='widthFix' src="/static/images/icon-green/tang.png"></image>
+      <text class="get_success" style='font-size:40rpx;color:#db5a6e;'>{{water_state}}</text>
+      </block>
+      <block wx:else>
+      <image mode='widthFix' src="/static/images/icon-green/img_buy_success.png"></image>
+      <text class="get_success" >{{water_state}}</text>
+      </block>
+      <text class="get_water">中断取水{{out_time}}S后机器自动结束</text>
+    </view>
+  </view>
+  <view class="other">
+    <view class="quality-num">
+      <image mode='widthFix' src="/static/images/icon-green/img_quality_num.png" style="width: 7%;margin-left: 1%;"></image>
+      <text>{{water_font}}</text><text class="num">{{quantityml}}ml</text>
+    </view>
+    <view class="quality-balance quality-num">
+      <image mode='widthFix' src="/static/images/icon-green/img_quality_balance.png" style="width: 8%;"></image>
+      <block  wx:if="{{paytep =='3'}}">
+       <text>支付水币</text><text class="balance">{{water_coin}}元</text>
+      </block>
+      <block wx:else>
+        <text>原   价</text><text class="balance">{{element}}元</text>
+      </block>
+    </view>
+    <block  wx:if="{{paytep !='3' || page=='1'}}">
+    <view class="quality-balance">
+      <image mode='widthFix' src="/static/images/icon-green/img_quality_balance.png" style="width: 8%;"></image>
+       <text>折扣后金额</text><text class="balance">{{dispatchprice=='0'?element:dispatchprice}}元</text>
+    </view>
+    </block>
+  </view>
+  <view class="btn-group">
+    <button class="button btn-recharge" bindtap='recharge'>去充值</button>
+    <button class="button btn-success" bindtap='success'>完成</button>
+  </view>
+  <view class="tips">
+    <text class="title">咕咚共享饮水温馨提示： </text>
+    <text class="content">支付成功后，请按机器上的红蓝按钮出水，其中红色代表热水， 蓝色代表常温水，再次按压即停止出水，为了让更多人能及时饮水，在<text class='color-red'>中断取水{{out_time}}S后</text>，设备会自动清零该次饮水信息，谢谢您的配合与理解！</text>
+  </view>
+</view>

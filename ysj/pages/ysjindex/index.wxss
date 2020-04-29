@@ -1,0 +1,87 @@
+/* pages/ysjindex/index.wxss */
+.container {width: 100%;height: 100%;font-size: 28rpx;}
+.menu-item {width: 35%;text-align: center;padding: 4px 0 !important;font-size: 32rpx;color: #747474;position: static;}
+.menu-item2{border-right:none;}
+.menu-item2 image {width: 110rpx;height: 125rpx;position:absolute;top:-45rpx;right:50%;margin-right:-60rpx;}
+.img {width: 40rpx;height: 40rpx;display: block;margin: auto;}
+.clear {clear: both;}
+.tab-bar {display: flex;border-top: 2rpx solid #e5e5e5;position: fixed;width: 100%;}
+.button {background: none;border: none;line-height: normal;padding: 0;margin: 0;}
+.button::after {border: none;}
+.mask {width: 100%;height: 100%;background: #fff;position: fixed;bottom: 0;}
+.body {margin-bottom: 200rpx;}
+.colors{color: red}
+.scanqr{width: 35%;height: 146rpx;position:absolute;top:-45rpx;right:32%;opacity: 0}
+
+
+
+.ysj-showModal{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: #9999;
+  z-index: 9999;
+}
+.ysj-Modal-wrap{
+  background: #fff;
+  width: 76%;
+  margin: 0 auto;
+  height: 600rpx;
+  opacity: 1;
+  z-index: 99999;
+  position: relative;
+  top: 234rpx;
+  border-radius: 8px;
+}
+.Modal-Font{
+  position: absolute;
+  top: 0rpx;
+  color: #4f881c;
+  font-size: 40rpx;
+  text-align: center;
+ margin-top:52rpx;
+   left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+}
+.Modal-font-info{
+  position: absolute;
+  color: #4f881c;
+  font-size: 40rpx;
+  text-align: center;
+  bottom: 68rpx;
+   left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+}
+.ysj-Modal-wrap .modal-img{
+  position: absolute;
+  top: 177rpx;
+  display: block;
+  width: 50%;
+    left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+}
+.modal-out{
+  position: absolute;
+  display: block;
+  width: 20%;
+  bottom: -135rpx;
+    left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+}
+.achieve_msg-modal{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.5;
+  z-index: 99;
+}
+

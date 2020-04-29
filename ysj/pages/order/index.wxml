@@ -1,0 +1,72 @@
+<!--pages/order/index.wxml-->
+<view class="nav">
+  <button hover-class='none' class="nav-btn {{currentTab == 0 ?'active':''}}" bindtap="switchNav" id="0">全部</button>
+  <button hover-class='none' class="nav-btn {{currentTab == 1 ?'active':''}}" bindtap="switchNav" id="1">待取水</button>
+  <button hover-class='none' class="nav-btn {{currentTab == 2 ?'active':''}}" bindtap="switchNav" id="2">已完成</button>
+  <!-- <button hover-class='none' class="nav-btn {{currentTab == 3 ?'active':''}}" bindtap="switchNav" id="3">取水超时</button> -->
+  <button hover-class='none' class="move" style="left: {{currentTab*251.5}}rpx"></button>
+</view>
+<view style='height:90rpx'></view>
+<swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height: {{winHeight + 'px'}};">
+  <swiper-item wx:for="{{[0,1,2]}}" style='background-color:#f7fafe'>
+    <view class="main"  id="column-list" class=" {{flag == 'Error' ?'container-ban':''}}">
+     <block wx:if="{{flag == 'Error'}}" >
+      <view class="notinfomessage"  >
+        <image mode="widthFix" src="/static/images/icon-green/img_order_empty.png"></image>
+        <text>没有找到订单</text>
+      </view>
+      </block>
+      <block wx:else>
+      <view class='list'style='background-color:#fff' wx:for="{{orderinfo}}" >
+        <view class='list-top'>
+          <text class='left'>订单编号：{{item.ordersn}}</text>
+          <text class="right selected {{item.state=='取水超时'?'color-red':'color-blue'}}" >{{item.status}}</text>
+        </view>
+        <view class='list-center'>
+          <image  mode="widthFix" src="/static/images/icon-green/water.png" style='width:22rpx;margin:0 18rpx'></image>
+          <text class='left'>购买水量</text>
+          <block wx:if="{{item.mode == 3}}">
+          <text class='right'>{{item.realnumber}}ml</text>
+          </block>
+           <block wx:if="{{item.mode == 2}}">
+          <text class='right'>{{item.realnumber}}ml</text>
+          </block>
+           <block wx:if="{{item.mode == 1}}">
+          <text class='right'>{{item.number}}ml</text>
+           </block>
+        </view>
+ <block wx:if="{{item.paytype == 3 || item.mode==1}}">
+        <view class='list-bottom'>
+          <text class='left'>{{item.createtime}}</text>
+          <block wx:if="{{item.paytype == 3}}">
+          <text class='right'>支付水币：</text><text class='color'>{{item.point}}元</text>
+          </block>
+          <block wx:else>
+          <text class='right'>支付金额：</text><text class='color'>{{item.price}}元</text>
+           </block>
+        </view>
+ </block>
+  <block wx:else>
+        <view class='amount'>
+           <text class='left'>{{item.createtime}}</text>
+            <block wx:if="{{item.paytype == 3}}">
+            <view class='right'>支付水币：{{item.point}}元</view>
+            </block>
+            <block wx:else>
+            <view class='right'>原 价：{{item.price}}元</view>
+            </block>
+            <view class='amount-zk'>折扣金额：{{item.payprice==null?item.price:item.payprice}}元</view>
+        </view>
+  </block>
+         <block wx:if="{{item.status=='待取水' && item.paystatus=='1'}}" >
+        <view class='list-water'  bindtap='btnwater'  data-order="{{item.ordersn}}">
+        <text class='info'>立即出水</text>
+        </view>
+        </block>
+      </view>
+      </block>
+    </view>
+  </swiper-item>
+</swiper>
+
+

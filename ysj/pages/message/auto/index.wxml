@@ -1,0 +1,56 @@
+<!--pages/message/auto/index.wxml-->
+<view class="auto_body" wx:if="{{show_content}}">
+  <view class="image">
+    <image mode='widthFix' style="width: 100%;" src="/static/images/img_weixin.png"></image>
+  </view>
+  <view class="text">
+    <text>申请获取以下权限</text>  
+    <text>获得你的公开信息(昵称，头像等)</text>
+  </view>
+  <view class="btn">
+    <button class="button" openType="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+    <button class="button" bindtap="resq">取消授权</button>
+  </view>
+</view>
+
+<view class="modal_M"  wx:if="{{show_content}}"></view>
+
+
+
+<view class="body">
+  <navigator hover-class='none' class="member">
+    <view class="logo">
+      <block wx:if="{{user}}">
+        <image mode="widthFix" src="{{user.avatarurl}}" style="border-radius: 50%;"></image>
+      </block>
+      <block wx:else>
+        <image mode="widthFix" src="/static/images/noface.png" style="border-radius: 50%;"></image>
+      </block>
+    </view>
+    <view class="name">
+     <button class="button" openType="getUserInfo" bindgetuserinfo="bindGetUserInfo">点击授权登录</button>
+    </view>
+  </navigator>
+  <view class="tab" bindtap="show_auto">
+    <navigator hover-class='none' class="myorder" >
+      <image mode="widthFix" class="icon" src="/static/images/icon-green/img_wallet.png" style=""></image>
+      <text style="flex-grow: 1;">我的钱包</text>
+      <text style="color: #b5b5b5;">可用余额{{user.amountbalance}}元 </text>
+      <image mode="widthFix" src="/static/images/icon/right.png" class="right-icon"></image>
+    </navigator>
+    <navigator hover-class='none' class="myorder" >
+      <image mode="widthFix" class="icon" src="/static/images/icon-green/money.png" style=""></image>
+      <text style="flex-grow: 1;">我的水币</text>
+      <text style="color: #b5b5b5;">可用水币{{user.point}}元 </text>
+      <image mode="widthFix" src="/static/images/icon/right.png" class="right-icon"></image>
+    </navigator>
+     <navigator hover-class='none' class="myorder" >
+      <image mode="widthFix" class="icon" src="/static/images/icon-green/img_orders.png" style=""></image>
+      <text style="flex-grow: 1;">我的订单</text>
+    </navigator>
+  </view>
+  
+</view>
+<view class="left" bindtap="show_auto"></view>
+<view class="right" bindtap="show_auto"></view>
+<component_tab/>

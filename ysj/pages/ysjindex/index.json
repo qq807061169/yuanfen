@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "component_car": "/pages/components/find/index",
+    "component_index": "/pages/components/ysjindex/index",
+    "component_my": "/pages/components/my/index"
+  },
+  "navigationBarTitleText": "咕咚共享饮水",
+  "navigationBarBackgroundColor": "#528921",
+  "navigationBarTextStyle": "white"
+}

@@ -1,0 +1,46 @@
+<!--pages/topup_list/index.wxml-->
+<view class="bodys">
+  
+  <view class="topup_centent" bindtap="btn_content" data-content="{{item}}">
+    <view class="link">
+      <view class="f1">订单号：{{list.orderno}}</view>
+      <view>
+        <block wx:if="{{list.paystatus == 1}}">
+            <text style="color:#8bc43f">已支付</text>
+          </block>
+          <block wx:if="{{list.paystatus == 0}}">
+           <text style="color:#a5a5a5">未支付</text>
+          </block>
+      </view>
+    </view>
+    <view class="content">
+      <view class="list">
+        <view class="left f1"> 充值：</view>
+        <view class="right">￥{{list.money}}</view>
+      </view>
+      <view class="list">
+        <view class="left f1"> 总返回水币
+          <view class="tips">{{list.remark}}</view>
+        </view>
+        <view class="right">水币{{list.givepoint}}</view>
+      </view>
+      <view class="list">
+        <view class="left f1"> 赠品</view>
+        <view class="right">{{list.gifts}}</view>
+      </view>
+      <view class="list">
+        <view class="left f1 left_25"> 订单总价：</view>
+        <view class="right right_25">￥{{list.money}}</view>
+      </view>
+    </view>
+
+    
+  </view>
+
+  <view class="kdinfo">
+    <view class="line">下单时间：{{list.createtime}}</view>
+    <view class="line">配送地址：{{list.province}}{{list.city}}{{list.district}}{{list.address}}</view>
+    <view class="line">联系电话：{{list.mobile}}</view>
+  </view>
+
+</view>

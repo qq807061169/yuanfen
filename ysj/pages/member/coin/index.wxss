@@ -1,0 +1,145 @@
+/* pages/member/wallet/index.wxss */
+page {
+  height: 100%;
+}
+.body {
+  width: 100%;
+  height: 100%;
+}
+image {
+  width: 100%;
+}
+.head {
+  width: 100%;
+  position: relative;
+  top: 0;
+  z-index: 99;
+}
+loading {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 199;
+    display: none;
+}
+.head .content {
+  width: 100%;
+  position: absolute;
+  top: 10%;
+  text-align: center;
+}
+.title {
+  font-size: 32rpx;
+  color: #fff;
+}
+.money {
+  font-size: 55rpx;
+  color: #fff;
+  margin:40rpx 0 70rpx
+}
+.money text {
+  font-size: 32rpx;
+}
+.btn {
+  display: flex;
+  justify-content:center;
+}
+.btn .button {
+  font-size:32rpx;
+  border:2rpx solid #fff;
+  color:#fff;
+  /* padding:5rpx 25rpx; */
+  height: 50rpx;
+  line-height: 43rpx;
+  width: 166rpx;
+  margin: 0 50rpx;
+  border-radius: 30rpx;
+}
+.main {
+  padding:10rpx 40rpx;
+}
+.main .detail {
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  line-height: 1.5;
+  border-bottom: 2rpx solid #e5e5e5;
+  padding: 20rpx 0;
+}
+.detail .left {
+  flex-grow:1;
+}
+.detail .left .font{
+  color: #333;
+  font-size: 32rpx;
+}
+.detail .date {
+  display:block;
+  font-size:27rpx;
+  color:#b7b7b7;
+}
+.detail .right {
+  font-size: 40rpx;
+  width: 60%;
+  text-align: right;
+}
+.detail .recharge {
+  color: #528921;
+}
+.detail .consumption {
+  color: #0b8bd4;
+}
+.more {
+  height:120rpx;
+  font-size:32rpx;
+  line-height:120rpx;
+  color:#0b8bd4;
+}
+.recharge-num {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  border-radius: 15rpx;
+  font-size: 34rpx;
+  padding: 20rpx 0 20rpx 40rpx;
+  border: 2rpx solid #e7f2fb;
+  box-shadow: 4rpx 4rpx 4rpx #528921;
+  margin-top: 200rpx;
+  background: #fff;
+}
+.recharge-now {
+  display: block;
+  font-size:32rpx;
+  margin-bottom:200rpx;
+  width:80%;
+  color:#fff;
+  background:#528921;
+  line-height:2.5;
+}
+.mask {
+  display: flex; 
+  align-items: flex-end;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.notinfomessage {
+  width: 28%;
+  text-align: center;
+  color: #528921;
+  font-size: 30rpx;
+  margin: 222rpx auto;
+}
+.invalid{
+  font-size:27rpx;
+  color: #528921;
+
+}
+.page {
+    overflow-x: hidden;
+    height: auto;
+    min-height: 100%;
+    overflow-y: scroll;
+}

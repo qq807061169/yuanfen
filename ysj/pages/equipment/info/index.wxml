@@ -1,0 +1,31 @@
+<!--pages/equipment/info/index.wxml-->
+<view class="info_top">
+  <view class="desc">
+    <view class="title">{{name}}</view>
+    <view class="info">到期   {{date}}   剩余用水量 {{number}}</view>
+  </view>
+  <view class="btn" bindtap="click_renewal">
+    续费
+  </view>
+</view>
+
+<view class="sq_info">
+  <view class="list">
+    <view class="title">
+    设备TDS
+    </view>
+    <view class="number">
+   {{tds}}
+    </view>
+  </view>
+
+  <view class="list" bindtap="clickPay">
+    <view class="title">
+    缴费记录
+    </view>
+    <view class="img_imc">
+    <!-- <image mode="widthFix" class="icon" src="/static/images/right.png" style=""></image> -->
+     <image mode="widthFix" src="/static/images/icon/right.png" class="right-icon"></image>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,49 @@
+<!--pages/index/index.wxml-->
+<view class="body">
+  <navigator hover-class='none' class="member">
+    <view class="logo">
+      <!-- <block wx:if="{{canIUse}}">
+        <open-data type="userAvatarUrl"></open-data>
+      </block>
+      <block wx:else>
+        <image mode="widthFix" src="/static/images/noface.png" style="border-radius: 50%;"></image>
+      </block> -->
+      <block wx:if="{{user}}">
+        <image mode="widthFix" src="{{user.avatarUrl}}" style="border-radius: 50%;"></image>
+      </block>
+      <block wx:else>
+        <image mode="widthFix" src="/static/images/noface.png" style="border-radius: 50%;"></image>
+      </block>
+    </view>
+    <view class="name">
+      <!-- <block wx:if="{{canIUse}}">
+        <open-data type="userNickName" lang="zh_CN"></open-data>
+      </block>
+      <block wx:else>
+        请更新您的微信
+      </block> -->
+      <block wx:if="{{canIUse}}">
+        {{user.nickName}}
+      </block>
+    </view>
+  </navigator>
+  <view class="tab">
+    <navigator hover-class='none' class="myorder" url="/pages/member/wallet/index">
+      <image mode="widthFix" class="icon" src="/static/images/icon-green/img_wallet.png" style=""></image>
+      <text style="flex-grow: 1;">我的钱包</text>
+      <text style="color: #b5b5b5;">可用余额{{user.amountbalance}}元 </text>
+      <image mode="widthFix" src="/static/images/icon/right.png" class="right-icon"></image>
+    </navigator>
+     <navigator hover-class='none' class="myorder" url="/pages/order/index">
+      <image mode="widthFix" class="icon" src="/static/images/icon-green/img_orders.png" style=""></image>
+      <text style="flex-grow: 1;">我的订单</text>
+      <!-- <text style="color: #b5b5b5;">可用余额100.00元 </text> -->
+      <!-- <image mode="widthFix" src="/static/images/icon/right.png" class="right-icon"></image> -->
+    </navigator>
+  </view>
+</view>
+<!--tabber.wxml-->
+<view class="container">
+  <import src="/tabbar.wxml" />
+  <template is="tabBar" data="{{tabBar}}" />
+</view>

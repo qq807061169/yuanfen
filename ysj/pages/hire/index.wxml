@@ -1,0 +1,89 @@
+<!--pages/hire/index.wxml-->
+<loading wx:if="{{!show}}">加载中...</loading>
+<view class="main" wx:if='{{show}}'>
+  <text class="h2">套餐选择</text>
+  <view class="eqItem">
+    <block wx:if="{{rules.isfree}}">
+      <button class="list button" bindtap="btnselect" data-id="{{rules.id}}" data-leasetype="{{rules.leasetype}}">
+        <view class="line"></view>
+        <view class="desc">
+          <view class="title">{{rules.name}}</view>
+          <view class="info">最大出水量 {{rules.leasenum}}L</view>
+          <view class="info" style="color:#528921">免费赠送体验时长 {{rules.longtime}}天</view>
+          <!-- <view class="info"> 套餐费用 {{rules.amount}}元</view> -->
+        </view>
+        <!-- <block wx:if="{{rules.id == curitemId}}">
+          <view class="detg">
+            <image src="/static/images/icon/gou.png" class="gouimg"></image>
+          </view>
+        </block>
+        <block wx:else>
+          <view class="det">
+            -
+          </view>
+        </block> -->
+      </button>
+    </block>
+    <block wx:for="{{list}}">
+      <button class="list button" bindtap="btnselect" data-id="{{item.id}}" data-leasetype="1">
+        <view class="line"></view>
+        <view class="desc">
+          <view class="title">{{item.name}}</view>
+          <view class="info">最大出水量 {{item.number}}L</view>
+          <view class="info"> 租凭时长 {{item.longtime}}天</view>
+          <view class="info"> 套餐费用 {{item.amount}}元</view>
+        </view>
+        <block wx:if="{{item.id == curitemId}}">
+          <view class="detg">
+            <image src="/static/images/icon/gou.png" class="gouimg"></image>
+          </view>
+        </block>
+        <block wx:else>
+          <view class="det">
+            -
+          </view>
+        </block>
+      </button>
+    </block>
+  </view>
+  <view class="btn_select" bindtap="btn_ljgm">
+    {{btn_foot}}
+  </view>
+
+  <view class="footurl" wx:if="{{url}}" bindtap="clickurl" data-url="{{url}}">
+      产品介绍指南
+  </view>
+
+
+</view>
+<view class="modal_show" wx:if="{{modal_show}}"></view>
+<view class="modal_show_main" wx:if="{{modal_show}}">
+  <view>
+    <image src="/static/images/tang.png" class="headsimg" mode="widthFix"></image>
+  </view>
+  <view class="modal_info">
+    <view class="title">用户资料</view>
+    <view class="list">
+
+        <view class="item">
+          <image src="/static/images/name.png" class="imgs"></image>
+          <view class="lin"></view>
+          <input type="text" placeholder=" 公司或个人姓名" bindinput="out1" bindblur="out2" data-names="name"></input>
+        </view>
+
+        <view class="item">
+          <image src="/static/images/icon/tel.png" class="imgs"></image>
+          <view class="lin"></view>
+          <input type="text" placeholder="请输入手机号码" bindinput="out1"   data-names="mobile" bindblur="out2"></input>
+        </view>
+     
+    </view>
+
+    <button class="button btn" bindtap="btnSubmit">立即提交</button>
+
+
+  </view>
+  <view class="button modal_gb" bindtap="modal_gb">
+    <image src="/static/images/icon-green/guanbi.png" mode="widthFix"></image>
+  </view>
+</view>

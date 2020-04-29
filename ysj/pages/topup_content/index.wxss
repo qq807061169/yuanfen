@@ -1,0 +1,78 @@
+/* pages/topup_list/index.wxss */
+page{
+  background: #eeeeee;
+}
+.bodys{
+  padding: 20rpx 0;
+}
+.topup_centent{
+  width: 100%;
+  border-radius: 4px;
+  background: #fff;
+  margin-bottom: 30rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.topup_centent .link{
+  font-size: 34rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #494848;
+  border-bottom: 1px solid #dcdcdc;
+  padding:0 25rpx;
+  display: flex;
+  align-items: center;
+}
+.topup_centent .content{
+ 
+}
+.topup_centent .content > .list{
+  display: flex;
+  align-items: center;
+   margin:0 25rpx;
+}
+.topup_centent .content > .list:nth-child(1){
+  font-size: 32rpx;
+  padding: 30rpx 0;
+}
+.topup_centent .content > .list:nth-child(2),.topup_centent .content > .list:nth-child(3),.topup_centent .content > .list:nth-child(4){
+  font-size: 30rpx;
+  color: #a5a5a5;
+  padding: 15rpx 0;
+}
+.topup_centent .content > .list:nth-child(5){
+  font-size: 34rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #494848;
+  border-top: 1px solid #dcdcdc;
+  margin:0 !important;
+
+}
+.kdinfo{
+  font-size: 30rpx;
+  color: #888888;
+  margin-top: 40rpx;
+   background: #fff;
+}
+.kdinfo view{
+  
+   margin:0 25rpx;
+  line-height: 2em
+}
+.left_25{
+  margin-left: 25rpx;
+}
+.right_25{
+  margin-right: 25rpx;
+}
+.tips{
+  color: #fe8224;
+  font-size: 24rpx;
+}
+.f1{
+  flex: 1;
+}
+text{
+  font-size: 28rpx;
+}

@@ -1,0 +1,18 @@
+<!--pages/index/index.wxml-->
+<block wx:if='{{!show}}'><loading>加载中...</loading></block>
+<view class="body">
+  <view class="scan">
+    <image mode='widthFix' src="/static/images/img_scan.png"></image>
+    <text>点击扫描设备上的二维码查看水质选择水量</text>
+  </view>
+  <view class="agreement">
+    <image mode='widthFix' src="/static/images/icon-green/{{fulldata?'img_checkbox_orange_true':'img_checkbox_orange_false'}}.png" bindtap='agreement'></image>
+    <text bindtap='agreement'>同意</text>
+    <button class="button" bindtap='gotoWeb' data-value="useragreement/index">《用户协议》</button>
+  </view>
+</view>
+<!--tabber.wxml-->
+<view class="container">
+  <import src="/tabbar.wxml" />
+  <template is="tabBar" data="{{tabBar}}" />
+</view>

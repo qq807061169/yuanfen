@@ -1,0 +1,52 @@
+<!--pages/components/adv/index.wxml-->
+<!-- 充值活动弹出 -->
+<block wx:if="{{activity_cz == true}}">
+  <view class="achieve_msg-modal"></view>
+  <view class="activity_modal">
+    <swiper previous-margin="{{previousMargin}}px" bindchange="changeIndicatorDots" indicator-dots="true" indicator-color="#ccc" indicator-active-color="#f6f6f6" next-margin="{{nextMargin}}px" style="height:100%;border-radius:7px;">
+      <block wx:for="{{getadv}}" wx:key="*this">
+        <swiper-item style="border-radius:7px">
+          <block wx:if="{{item.ad_type == 0}}">
+            <!-- 图 -->
+            <!-- <view class="adv_desc"> 广告
+              <view class="triangle_down"></view>
+            </view> -->
+            <view class="adv_desc_right" data-id="{{item.id}}" bindtap="noViewAdv">不再显示</view>
+            <image class="" src="{{item.thumb}}"></image>
+            <block wx:if="{{item.url_type == 2}}">
+              <button style="background-color:{{item.color}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="button ljcz">{{item.button}}</button>
+            </block>
+            <block wx:else>
+              <navigator style="background-color:{{item.color}}" wx:if="{{item.appid}}" target="miniProgram" app-id="{{item.appid}}" version="release" url="{{item.link}}" open-type="navigate" class="button ljcz" bindtap="nav_btg">{{item.button}}</navigator>
+              <navigator style="background-color:{{item.color}}" wx:else url="{{item.link}}" open-type="navigate" class="button ljcz" bindtap="nav_btg">{{item.button}}</navigator>
+            </block>
+
+          </block>
+          <block wx:else>
+            <!-- 视频 -->
+            <view class="advVideo tc">
+              <!-- <view class="adv_desc"> 广告
+                <view class="triangle_down"></view>
+              </view> -->
+              <view class="adv_desc_right" data-id="{{item.id}}" bindtap="noViewAdv">不再显示</view>
+              <block wx:if="{{ index == currentIndex}}">
+                <video src="{{item.video}}" controls autoplay></video>
+              </block>
+              <block wx:else>
+                <video src="{{item.video}}" controls></video>
+              </block>
+              <navigator style="background-color:{{item.color}}" wx:if="{{item.appid}}" target="miniProgram" app-id="{{item.appid}}" version="release" url="{{item.link}}" open-type="navigate" class="button ljcz" bindtap="nav_btg">{{item.button}}</navigator>
+              <navigator style="background-color:{{item.color}}" wx:else url="{{item.link}}" open-type="navigate" class="button ljcz" bindtap="nav_btg">{{item.button}}</navigator>
+
+            </view>
+          </block>
+
+        </swiper-item>
+
+      </block>
+    </swiper>
+    <view class="button gb" bindtap="gb_btrn">
+      <image src="/static/images/icon-green/guanbi.png" mode="widthFix"></image>
+    </view>
+  </view>
+</block>

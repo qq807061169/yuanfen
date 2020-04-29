@@ -1,0 +1,32 @@
+/* pages/content/index.wxss */
+.body {
+  margin-bottom: 100rpx;
+  padding: 0 20rpx;
+}
+.head {
+  text-align: center;
+  padding: 20rpx;
+  line-height: 2;
+}
+.head .title {
+  font-size: 42rpx;
+}
+.head .date {
+  font-size:30rpx;
+  color:#b5b5b5;
+}
+.thumb {
+  margin: 20rpx 0;
+}
+.thumb image {
+  width:100%;
+  border-radius: 20rpx;
+}
+.content {
+  text-indent:2em;
+  border:2rpx solid #b5b5b5;
+  border-radius:20rpx;
+  padding:20rpx;
+  line-height:2;
+  color: #333;
+}

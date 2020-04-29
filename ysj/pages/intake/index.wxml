@@ -1,0 +1,134 @@
+<!--pages/intake/index.wxml-->
+
+
+
+<block wx:if='{{!show}}'>
+  <loading>加载中...</loading>
+</block>
+
+
+<component_adv text="{{id}}" id="myComponent"/>
+<view class="body">
+
+<block wx:if='{{is_achieve == 1}}'>
+<view class='ysj-showModal' wx:if='{{!showModal}}'>
+<view class='achieve_msg-modal'>
+
+</view>
+  <view class='ysj-Modal-wrap'>
+    <view class='Modal-Font'>{{achieve_msg}}</view>
+    <image  mode='widthFix' src='/static/images/icon-green/modal.png' class='modal-img'></image>
+    <image mode='widthFix' src='/static/images/icon-green/gb.png' class='modal-out' bindtap='modal_out'></image>
+  </view>
+</view>
+</block>
+
+
+
+<block wx:if='{{modal == true}}'>
+
+<view class='ysj-showModal' wx:if='{{!showModal}}'>
+<view class='achieve_msg-modal'>
+</view>
+  <view class='ysj-Modal-wrap'>
+    <view class='Modal-Font'>{{achieve_msgs}}</view>
+    <image  mode='widthFix' src='/static/images/icon-green/modal.png' class='modal-img'></image>
+    <image mode='widthFix' src='/static/images/icon-green/gb.png' class='modal-out' bindtap='modal_outs'></image>
+    <view class='Modal-font-info'>恭喜您获得{{point}}个水币</view>
+  </view>
+</view>
+</block>
+
+<!-- <block wx:if="{{activity == true}}">
+  <view class="achieve_msg-modal"></view>
+  <view class="activity_modal">
+      <swiper
+       previous-margin="{{previousMargin}}px" indicator-dots="true" indicator-color="#ccc" indicator-active-color="#f6f6f6"	 next-margin="{{nextMargin}}px" style="height:100%;border-radius:7px;">
+        <block wx:for="{{getadv}}" wx:key="*this">
+          <swiper-item style="border-radius:7px">
+
+             <block wx:if="{{item.ad_type == 0}}">
+            <view class="adv_desc"> 广告 </view>
+            <image class="" src="{{item.thumb}}"></image>
+            <navigator url="{{item.link}}" open-type="navigate" class="button ljcz"  bindtap="nav_btg">{{item.button}}</navigator>
+           </block>
+           <block wx:else>
+           <view class="advVideo tc">
+            <view class="adv_desc"> 广告 </view>
+              <block wx:if="{{index == 0}}">
+                <video  src="{{item.video}}" bindplay="nav_btg"   controls autoplay ></video>
+              </block>
+              <block wx:else>
+              <video  src="{{item.video}}" bindplay="nav_btg"   controls ></video>
+              </block>
+            </view>
+           </block>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="button gb" bindtap="gb_btrn" >
+        <image src="/static/images/icon-green/guanbi.png" mode="widthFix"></image>
+      </view>
+  </view>
+</block> -->
+
+
+
+
+
+
+
+  <view class="head">
+    <image style="width: 100%;" mode='widthFix' src="/static/images/icon-green/img_bg.jpg"></image>
+    <!-- <view class="quality" style="margin-left: -{{waterWidth}}px;">
+      <image class="warerdrop" mode='widthFix' src="/static/images/icon-green/img_waterdrop.png"></image>
+      <text class="qualitys">{{quality}}</text>
+      <text class="tds" style="left:{{tdslen>2?'4%':'5%'}};">TDS值：{{tds}}</text>
+    </view> -->
+
+    <view class='ysj-quality'>
+        <image class='quality-left' src='/static/images/icon-green/yuan.png'  mode='widthFix'></image>
+        <image class='quality-centent' src='/static/images/icon-green/yuhu.png'  mode='widthFix'></image>
+        <image class='quality-right' src='/static/images/icon-green/chu.png'  mode='widthFix'></image>
+        <image class="warerdrop" mode='widthFix' src="/static/images/icon-green/img_waterdrop.png"></image>
+        <view class='qualitys'>{{quality}}</view>
+        <view class='qualitys-tds'>净化前TDS：{{intds}}</view>
+        <view class='qualitys-intds'>净化后TDS：{{tds}}</view>
+    </view>
+    <view class="explain">
+      <text class="title">*温馨提示：</text>
+      <text class="content">现在你可以点击开始取水并按设备上的开关进行取水了，为了您的资金安全，单次最大取水量为{{water_number}}升，<text class='color-red'>取水中断{{out_time}}s</text> 后开关将自动关闭并计费该次饮水，若需再次取水需要重新扫码</text>
+    </view>
+    <view class="other">
+        <view class='attribute'>
+          <view class="{{attribute==0?'num-active':''}}" data-id="0" bindtap='btnwen'>常温水</view>
+          <view class="{{attribute==1?'num-active':''}}" data-id="1" bindtap='btnhot'>热水</view>
+        </view>
+      <view class="quality-num">
+        <image mode='widthFix' src="/static/images/icon-green/img_quality_num.png" style="width: 7%;margin-left: 1%;"></image>
+        <text class='color-red'>您单次可取水量</text><text class="num">{{res}}ml</text>
+      </view>
+      <view class="quality-balance">
+        <image mode='widthFix' src="/static/images/icon-green/img_quality_balance.png" style="width: 8%;"></image>
+         <block  wx:if="{{page =='1'}}">
+           <text>您的水币</text><text class="balance">{{user.point}}元</text>
+        </block>
+        <block wx:else>
+        <text>您的账户余额</text><text class="balance">{{user.amountbalance}}元</text>
+     
+         </block>
+      </view>
+    </view>
+  </view>
+  <!-- <view class="tips">
+    <text class='title'>*提示： </text>
+    <text>现在你可以点击开始取水并按设备上的开关进行取水了，为了您的取水安全，单次最大取水量为1升，取水中断30s 后开关将自动关闭并计费该次饮水，若需再次取水需要重新扫码</text>
+  </view> -->
+  <view class="btn-grow">
+    <button hover-class='none' class="button stop" bindtap='stop'>开始取水</button>
+    <button hover-class='none' class="button recharge" bindtap='recharge'>去充值</button>
+  </view>
+</view>
+
+ <component_tabbar/>
+

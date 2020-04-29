@@ -1,0 +1,106 @@
+<!--pages/member/wallet/index.wxml-->
+<page style="overflow:hidden">
+<block wx:if='{{!shows}}'>
+  <loading>加载中...</loading>
+</block>
+<!-- <modal hidden="{{hidden}}" title="退款备注" confirm-text="确定" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+    <view class='content' style='height:70rpx;line-height:70rpx;border:1px solid #b9b9b9;border-radius:4px'>
+      <input class='resout'></input>
+    </view>
+</modal> -->
+<block wx:if='{{shows}}'>
+
+<block wx:if='{{modal == true}}'>
+<view class='ysj-showModal' wx:if='{{!showModal}}'>
+<view class='achieve_msg-modal'>
+</view>
+  <view class='ysj-Modal-wrap'>
+    <view class='modal-font'>退款申请</view>
+    <view  class='selects'>
+      <view class='item' bindtap='reasonBtn' data-desc="不想用了" data-isd="0">不想用了</view>
+      <view class='item' bindtap='reasonBtn' data-desc="操作繁琐" data-isd="0">操作繁琐</view>
+      <view class='item' bindtap='reasonBtn' data-desc="机器故障" data-isd="0">机器故障</view>
+      <view class='item' bindtap='reasonBtn' data-desc="" data-isd="1">其他</view>
+    </view>
+    <view class='modal-text'>
+      <textarea fixed placeholder='填写退款理由' bindinput="out1" bindblur="out2"  disabled="{{isDisabled}}"  value='{{reason}}' focus="{{!isDisabled}}"></textarea>
+    </view>
+    <view class='modal-btn' style=''>
+      <view class='m-left' bindtap='cancel'>取消</view>
+      <view class='m-right' bindtap='qur'>提交申请</view>
+    </view>
+  </view>
+</view>
+</block>
+
+
+<view class="page navbar" wx:if="{{shows}}">
+<view class="body" style="overflow: {{show=='recharge'?'hidden':'visible'}};position: {{show=='recharge'?'fixed':'static'}};">
+  <view class="head">
+    <image class="bg" mode='widthFix' src="/static/images/icon-green/img_wallet_bg.png"></image>
+    <view class="Detail" bindtap='getDetail'>明细</view>
+    <view class="content">
+      <view class="title">账户余额</view>
+      <view class="money">{{user.amountbalance}} <text>元</text></view>
+      
+      <view class="btn">
+        <button class="button" bindtap='recharge'>充值</button>
+        <button class="button" bindtap='refund'>退款</button>
+      </view>
+    </view>
+  </view>
+  <view class="main">
+  <block  wx:if="{{account.data ==''}}">
+  <view class="notinfomessage"  >
+      <image mode="widthFix" src="/static/images/icon-green/img_xiaof.png"></image>
+      <text>暂无消费记录</text>
+  </view>
+  </block>
+  <block wx:else>
+
+  <block  wx:for="{{accountList}}">
+    <view class="detail">
+      <view class="left">
+        <text class='font'>{{item.remark}}</text>
+        <text class="date">{{item.paydate}}</text>
+      </view>
+      <view class="right">
+      <block wx:if="{{item.flag == 1}}">
+      <text class="recharge">+{{item.amount}}元</text>
+      </block>
+      <block wx:elif="{{item.flag == 2}}">
+      <text class="consumption">-{{item.amount}}元</text>
+      </block>
+      <block wx:elif="{{item.flag == 0}}">
+      <text class="consumption">-{{item.amount}}元</text>
+      </block>
+      </view>
+    </view>
+  </block>
+
+  </block>
+  </view>
+  <!-- <button class="button more" bindtap='clickLoad' wx:if="{{account.msg > 10}}">点击查看更多明细</button> -->
+  <view class="mask" style="display: {{show=='recharge'?'flex':'none'}};">
+    <view class="recharge-num">
+      <text>充值金额：</text>
+      <input type="text" style="flex-grow: 1; font-size: 32rpx;" placeholder='请选择充值金额' bindinput="getNum1" bindblur="getNum2" value='{{inputValue}}' disabled='true' wx:if="{{discount == 0 || discount== ''}}" />
+      <input type="text" style="flex-grow: 1; font-size: 32rpx;" placeholder='请选择充值金额' bindinput="getNum1" bindblur="getNum2" value='{{inputValue}}+赠送{{discount}}水币' disabled='true' wx:else />
+      
+
+    </view>
+     <view class='select-top-up'>
+      <block wx:for="{{filling}}">
+        <button class="select-nunber button {{quality_default==item.id?'select':''}}" data-paymoney="{{item.paymoney}}" data-moeny="{{item.amount}}" data-id="{{item.id}}" data-discount="{{item.discount}}" bindtap='select' hover-class='none'>
+            <view class="moneys">{{item.money}}</view>
+            <view class="paymoney">售价：{{item.paymoney}} 元 </view>
+        </button>
+        
+      </block>
+      </view>
+    <button class="button recharge-now" bindtap='topUp' disabled='{{disb}}'>立即充值</button>
+  </view>
+</view>
+</view>
+</block>
+</page>

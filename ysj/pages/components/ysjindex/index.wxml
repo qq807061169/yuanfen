@@ -1,0 +1,16 @@
+<view class='warp'>
+  <view style='height:180rpx'></view>
+    <view class="scan">
+      <image mode='widthFix' src="/static/images/img_scan.png" bindtap='sq'></image>
+      <text>点击扫描设备上的二维码查看水质选择水量</text>
+    </view>
+    <view class="explain">
+        <text class="title">*水质说明:</text>
+        <text class="content">经过RO反渗透多级全封闭环保净化后，设备出水符合国家《饮用净水水质标准-CJ94-2005》标准，水质安全适宜新鲜直饮，请您放心饮用。</text>
+    </view>
+    <view class="agreement">
+      <image mode='widthFix' src="/static/images/icon-green/{{fulldata?'img_checkbox_orange_true':'img_checkbox_orange_false'}}.png" bindtap='agreement'></image>
+      <text bindtap='agreement'>同意</text>
+      <button class="button" bindtap='gotoWeb' data-value="useragreement/index">《用户协议》</button>
+    </view>
+</view>

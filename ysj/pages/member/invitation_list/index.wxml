@@ -1,0 +1,15 @@
+<!--pages/member/invitation_list/index.wxml-->
+<block wx:if="{{list.length>0}}">
+<view class="main">
+  <view class="list" wx:for="{{list}}" >
+    <view class="listImg"><image src="{{item.avatarurl}}"></image></view>
+    <view class="listName">{{item.nickname}}</view>
+  </view>
+</view>
+ </block>
+ <block wx:else>
+  <view class="view_box">
+    <image src="/static/images/icon/sb.png" mode="widthFix"></image>
+      <!-- <view> 暂无设备</view> -->
+    </view>
+  </block>

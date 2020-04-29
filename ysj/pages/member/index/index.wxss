@@ -1,0 +1,46 @@
+/* pages/index/index.wxss */
+.body {
+  width: 100%;
+  position: fixed;
+  overflow: hidden;
+}
+image {
+  width: 100%;
+}
+.icon {
+  width: 5%;
+  margin: 0 30rpx;
+}
+.right-icon {
+  width: 2%;
+  margin: 0 20rpx 0 10rpx;
+}
+.member {
+  width: 100%;
+  padding: 30rpx;
+  margin-top: 10rpx;
+  border-bottom: 2rpx solid #efefef;
+  display: flex;
+  align-items: center;
+}
+.logo {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.name {
+  margin: 0 50rpx;
+}
+.tab {
+  line-height: 3;
+  font-size: 32rpx;
+}
+.tab navigator {
+  display: flex;
+  align-items: center;
+  border-bottom: 2rpx solid #efefef;
+}
+.other {
+  border-bottom: 0;
+}

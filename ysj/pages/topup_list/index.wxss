@@ -1,0 +1,72 @@
+/* pages/topup_list/index.wxss */
+page{
+  background: #eeeeee;
+}
+.bodys{
+  padding: 20rpx 30rpx;
+}
+.topup_list{
+  width: 100%;
+  border-radius: 4px;
+  background: #fff;
+  margin-bottom: 30rpx;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  z-index: 9;
+}
+.topup_list .link{
+  font-size: 34rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #494848;
+  border-bottom: 1px solid #dcdcdc;
+  padding-left: 18rpx;
+  display: flex;
+  align-items: center;
+}
+.topup_list .content{
+  padding: 18rpx;
+}
+.topup_list .content .money{
+  color: #494848;
+  font-size: 32rpx;
+  margin-bottom: 10rpx;
+}
+.topup_list .content .data{
+  color: #888888;
+  font-size: 32rpx;
+  margin-bottom: 10rpx;
+}
+
+.notinfomessage {
+  width: 25%;
+  text-align: center;
+  color: #528921;
+  font-size: 30rpx;
+  margin: 350rpx auto;
+}
+.notinfomessage image{
+  width: 180rpx;
+}
+.f1{
+  flex: 1;
+}
+.link > .right > text{
+  font-size: 28rpx;
+}
+
+.btn_navDet{
+  position: absolute;
+  right: 20rpx;
+  top: 110rpx;
+  z-index: 10;
+  font-size: 32rpx;
+  border-radius: 6px;
+  padding: 5rpx;
+  border: 1px solid #528921;
+  color: #528921;
+  width: 130rpx;
+  text-align: center;
+}

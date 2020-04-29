@@ -1,0 +1,36 @@
+{
+  "debug": false,
+  "pages": [
+    "pages/ysjindex/index",
+    "pages/member/invitation_list/index",
+    "pages/member/invitation/index",
+    "pages/equipment/paylist/index",
+    "pages/equipment/list/index",
+    "pages/equipment/info/index",
+    "pages/hire/index",
+    "pages/topup_list/index",
+    "pages/topup_content/index",
+    "pages/index/index",
+    "pages/topup/index",
+    "pages/order/index",
+    "pages/member/index/index",
+    "pages/member/integral/index",
+    "pages/discovery/index",
+    "pages/rental/index",
+    "pages/buysuccess/index",
+    "pages/selectwater/index",
+    "pages/intake/index",
+    "pages/member/wallet/index",
+    "pages/member/coin/index",
+    "pages/message/auto/index",
+    "pages/web/index"
+  ],
+  "global": {
+    "window": {
+      "backgroundColor": "#000000",
+      "navigationBarBackgroundColor": "#000000",
+      "navigationBarTextStyle": "#fff"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

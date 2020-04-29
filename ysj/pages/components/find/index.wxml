@@ -1,0 +1,20 @@
+<!--pages/components/find/index.wxml-->
+
+<block wx:if='{{!show}}'>
+  <loading>加载中...</loading>
+</block>
+<block wx:if='{{show}}'>
+<view class="body">
+  <block wx:for="{{list}}">
+    <view class="main">
+      <button hover-class='none' class="button list" data-id="{{item.id}}" data-value="article/index" bindtap='gotoWeb'>
+        <view class="img">
+          <image mode='widthFix' src="{{item.thumb}}"></image>
+        </view>
+        <text class="title">{{item.title}}</text>
+        <text class="date">发布时间：{{item.create_time}}</text>
+      </button>
+    </view>
+  </block>
+</view>
+</block>

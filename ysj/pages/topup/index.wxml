@@ -1,0 +1,154 @@
+<!--pages/topup/index.wxml-->
+<loading wx:if="{{!shows}}">加载中...</loading>
+<view class="bodys" wx:if="{{shows}}">
+
+  
+
+  <block wx:if='{{modal == true}}'>
+    <view class='ysj-showModal' wx:if='{{!showModal}}'>
+      <view class='achieve_msg-modal'>
+      </view>
+      <view class='ysj-Modal-wrap'>
+        <view class='modal-font'>填写信息</view>
+        <view class='selects'>
+          <block wx:if="{{select_type == 0}}">
+          <view class="item {{item_id==1 ?'list_act':''}}" bindtap='reasonBtn' data-id="1">线上兑换</view>
+          <view class="item {{item_id==2 ?'list_act':''}}" bindtap='reasonBtn' data-id="2">线下兑换</view>
+          </block>
+          <!-- <block wx:if="{{select_type == 1}}">
+            <view class="item {{item_id==1 ?'list_act':''}}" bindtap='reasonBtn' data-id="1">线上兑换</view>
+          </block>
+          <block wx:if="{{select_type == 2}}">
+            <view class="item {{item_id==2 ?'list_act':''}}" bindtap='reasonBtn' data-id="2">线下兑换</view>
+          </block> -->
+
+        </view>
+        
+    
+        <block wx:if="{{item_id == 2}}" >
+        <view class="address_info" >
+            <view class="item">
+            <view class="weui_title">
+              <image src='/static/images/name.png'></image>
+            </view>
+            <input class="weui_input" placeholder="联系人姓名" bindinput="name1" bindblur="name2" />
+          </view>
+
+          <view class="item">
+            <view class="weui_title">
+              <image src='/static/images/tel.png'></image>
+            </view>
+            <input class="weui_input" placeholder="联系人电话" bindinput="tel1" bindblur="tel2" />
+          </view>
+        </view>
+        </block>
+         <block wx:else>
+        <view class="address_info" >
+          <view class="item">
+            <view class="weui_title">
+              <image src='/static/images/name.png'></image>
+            </view>
+            <input class="weui_input" placeholder="联系人姓名"  bindinput="name1" bindblur="name2" />
+          </view>
+
+          <view class="item">
+            <view class="weui_title">
+              <image src='/static/images/tel.png'></image>
+            </view>
+            <input class="weui_input" placeholder="联系人电话"  bindinput="tel1" bindblur="tel2" />
+          </view>
+
+          <view class="item">
+            <view class="weui_title">
+              <image src='/static/images/address.png'></image>
+            </view>
+            <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+              <view class="picker" style="width:100%">
+                {{region[0]}}-{{region[1]}}-{{region[2]}}
+              </view>
+            </picker>
+          </view>
+          <view class='modal-text'>
+            <textarea fixed placeholder='请填写详细地址' bindinput="out1" bindblur="out2" ></textarea>
+          </view>
+        </view>
+          </block>
+        <view class='modal-btn' style=''>
+          <button class='m-left button' bindtap='cancel'>取消</button>
+          <button class='m-right button' bindtap='qur' disabled="{{disableds}}">提交</button>
+        </view>
+      </view>
+    </view>
+  </block>
+
+ 
+  <view class="m_30">
+    <view class="head_top">
+      <image src='/static/images/icon-green/bg_ye.png'></image>
+      <view class="flexs">
+        <view class="head_text">
+          <view class="title">本月待返水币</view>
+          <view class="number">￥{{con_info.point}}</view>
+        </view>
+        <view class="head_text">
+          <view class="title">本月还需消费</view>
+          <view class="number">￥{{con_info.waitpay}}</view>
+        </view>
+        <view class="head_text">
+          <view class="title">剩余待返水币</view>
+          <view class="number">￥{{con_info.waitback}}</view>
+        </view>
+      </view>
+      
+      <button class="btn_info button" bindtap="nav_tz">查看订单</button>
+    </view>
+     <block wx:if="{{datalength == true}}">
+  <view class="notinfomessage">
+    <image mode="widthFix" src="/static/images/icon-green/img_order_empty.png"></image>
+    <text>暂无活动</text>
+  </view>
+ </block>
+  <block wx:else>
+    <view class="select_item">
+      <block wx:for="{{list}}">
+        <view class="list  {{activity_id==item.id?'list_act':''}}" data-id="{{item.id}}" bindtap='select' data-index="{{index}}" data-type="{{item.type}}">{{item.money}}元
+          <image class="img" src="/static/images/icon-green/yh.png" ></image>
+        </view>
+
+      </block>
+    </view>
+    <view class="hr_title">
+      充值即赠
+    </view>
+    <view class="hr_info">
+      <view style="color:#999999;flex:1">{{list[select_index].hint}}</view>
+      <view style="color:#eb6100;" data-url="{{list[select_index].url}}" bindtap="geturl">查看说明</view>
+      <!-- {{list[select_index].url}} -->
+    </view>
+    <block wx:if="{{list[select_index].gift_type != 1}}">
+      <view class="select_lp" style="">{{list[select_index].describe}}</view>
+      <block wx:if="{{list[select_index].thumb}}">
+        <view class="select_item" style="  padding-bottom: 30rpx;border-bottom: 1px solid #eeeeee;">
+          <view class="lp_list list_act">
+            <image src="{{list[select_index].thumb}}" data-src='{{list[select_index].thumb}}'  bindtap='previewImg'></image>
+          </view>
+        </view>
+      </block>
+    </block>
+    <view class="radio_select" style="margin-top:40rpx">
+      <checkbox-group bindchange="checkboxChange">
+        <label class="checkbox">
+          <checkbox value="1" checked="false" />点击充值即同意
+        </label>
+      </checkbox-group>
+      
+      <button class="button" bindtap='gotoWeb' data-value="useragreement/index" data-id="2" style="font-size:32rpx;">《充值协议》</button>
+    </view>
+    <view class="btn_cz">
+      <image src="/static/images/icon-green/btn_cz.png"></image>
+      <button class="button " bindtap="cz_button" disabled="{{disableds}}"  >充值</button>
+    </view>
+    </block>
+  </view>
+   
+</view>

@@ -1,0 +1,246 @@
+/* pages/hire/index.wxss */
+.main{
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 49rpx;
+}
+page{
+  background: #fff;
+}
+.h2{
+  color: #000;
+  font-size: 38rpx;
+  padding: 36rpx 0 0;
+  display: block;
+}
+.package_info{
+  padding: 5rpx 15rpx;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 6px;
+}
+.package_info .info{
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+  font-size: 33rpx;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+.package_info .info:last-child{
+    border-bottom: 0;
+}
+.package_info .info .font{
+  width: 30%;
+}
+.package_info .info  .number{
+  color: #666;
+}
+.pack_select{
+  display: flex;
+  justify-content: space-between;
+  margin: 80rpx 0
+}
+.pack_select .list{
+  width: 28%;
+  text-align: center;
+  font-size: 34rpx;
+}
+.pack_select .list .box{
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 18rpx 0;
+  background: #ffffff;
+  margin-bottom: 15rpx;
+}
+.pack_select .list .box .number{
+  color: #528921;
+}
+.pack_select .list .box .price{
+  color: #ffd11a;
+}
+.pack_select .list .title{
+  color: #888;
+}
+.pack_select .active .box{
+  border: 1px solid #528921;
+}
+.pack_select .active .title{
+  color: #528921;
+}
+.btn_select{
+  width: 60%;
+  padding: 20rpx;
+  margin: 0 auto;
+  background: #528921;
+  text-align: center;
+  color: #fff;
+  font-size: 34rpx;
+  border-radius: 6px;
+  margin-bottom: 100rpx;
+}
+
+
+
+.modal_info .title{
+  font-size: 34rpx;
+  display: block;
+  padding: 15rpx 0;
+}
+.eqItem{
+  margin-top: 30rpx;
+}
+.eqItem .list{
+  display: flex;
+  align-items: center;
+  margin-bottom: 30rpx;
+  box-shadow: 2px 4px 5px 0px 
+		rgba(225, 223, 223, 0.75);
+	border-radius: 4px;
+	border: solid 1px #eeeeee;
+  padding: 30rpx 0 ;
+  position: relative;
+  z-index: 999999
+}
+.eqItem .list .line{
+  width: 2px;
+  height: 80rpx;
+ background-color: #528921;
+}
+.eqItem .list .desc{
+  margin-left: 40rpx;
+  flex: 1;
+  text-align: left;
+}
+.eqItem .list .desc .title{
+  font-size: 33rpx;
+  margin-bottom: 5rpx;
+}
+.eqItem .list .desc .info{
+  font-size: 31rpx;
+  color: #a3a2a2;
+}
+.eqItem .list .det{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  background-color: #bfbfbf;
+  text-align: center;
+  line-height: 50rpx;
+  margin-right: 20rpx;
+  color: #fff;
+}
+.eqItem .list .detg{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  background-color: #528921;
+  text-align: center;
+  line-height: 59rpx;
+  margin-right: 20rpx;
+  color: #fff;
+}
+.gouimg{
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.modal_show{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.5;
+  z-index: 9999999;
+  top: 0;
+  left: 0;
+}
+.modal_show_main{
+  width: 80%;
+  border-radius: 18px;
+  overflow: hidden;
+  position: fixed;
+  top: 14%;
+  left: 10%;
+  z-index: 19999999;
+/* transform:translate(-50%,-50%); */
+animation: showSweetAlert 0.3s;
+
+}
+.modal_show_main .headsimg{
+  height: auto;
+  width: 100%;
+  display: block;
+}
+.modal_info{
+  background: #fff;
+  padding: 20rpx 35rpx;
+}
+.modal_info .title{
+  font-size: 34rpx;
+  color: #000;
+}
+.modal_info .list{
+  margin-top: 16rpx;
+}
+.modal_info .list .item{
+  border: 1px solid #dcdcdc;
+  border-radius: 30px;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  padding: 10rpx;
+  margin-bottom: 20rpx;
+}
+.modal_info .list .item .lin{
+  width: 1px;
+  height: 40rpx;
+  background: #dcdcdc;
+  margin-right: 15rpx;
+}
+.modal_info .list .item .imgs{
+  width: 40rpx;
+  height: 40rpx;
+  padding: 0 20rpx;
+
+}
+.modal_info .list .item  input{
+  font-size: 32rpx;
+}
+.modal_info .btn{
+  width: 90%;
+  margin: 40rpx auto 25rpx;
+  border-radius: 30px;
+  color: #fff;
+  background: #528921;
+  text-align: center;
+  font-size: 32rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.modal_gb{
+  width: 85rpx;
+  left: 43%;
+  /* height: 75rpx; */
+  /* line-height: 75rpx; */
+  border-radius: 30px;
+  margin: 30rpx auto 0;
+}
+.modal_gb image{
+  width: 100%;
+  height: auto;
+}
+
+.footurl{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  background: #528921;
+  text-align: center;
+  color: #ffffff;
+  display: block;
+}

@@ -1,0 +1,50 @@
+<!--pages/member/wallet/index.wxml-->
+<loading wx:if='{{!show}}'>加载中...</loading>
+<view class="page navbar" wx:if="{{show}}">
+  <view class="body" style="overflow: {{show=='recharge'?'hidden':'visible'}};position: {{show=='recharge'?'fixed':'static'}};">
+    <view class="head">
+      <image class="bg" mode='widthFix' src="/static/images/icon-green/img_wallet_bg.png"></image>
+      <view class="content">
+        <view class="title">我的积分</view>
+        <view class="money">{{user.credits}}
+          <text>个</text>
+        </view>
+        <view class="btn">
+          <button class="button" bindtap='getDetail'>明细</button>
+          <!-- <button class="button" bindtap='recharge'>充值</button> -->
+        </view>
+      </view>
+    </view>
+    <view class="main">
+      <block wx:if="{{pointarr ==''}}">
+        <view class="notinfomessage">
+          <image mode="widthFix" src="/static/images/icon-green/img_xiaof.png"></image>
+          <text>暂无积分</text>
+        </view>
+      </block>
+      <block wx:else>
+
+        <block wx:for="{{pointarr}}">
+          <view class="detail">
+            <view class="left">
+              <text class='font'>{{item.remark}}</text>
+              <text class="date">{{item.create_time}}</text>
+            </view>
+            <view class="right">
+                <text class="recharge">+{{item.credits}}积分</text>
+            </view>
+          </view>
+        </block>
+      </block>
+
+    </view>
+    <!-- <button class="button more" bindtap='clickLoad' wx:if="{{account.msg > 10}}">点击查看更多明细</button> -->
+    <!-- <view class="mask" style="display: {{show=='recharge'?'flex':'none'}};">
+    <view class="recharge-num">
+      <text>充值金额：</text>
+      <input type="text" style="flex-grow: 1; font-size: 32rpx;" placeholder='请输入充值金额' bindinput="getNum1" bindblur="getNum2" value='{{inputValue}}' />
+    </view>
+    <button class="button recharge-now" bindtap='topUp' disabled='{{disb}}'>立即充值</button>
+  </view> -->
+  </view>
+</view>

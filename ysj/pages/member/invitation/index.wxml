@@ -1,0 +1,35 @@
+<!--pages/member/invitation/index.wxml-->
+
+<view class="headImg">
+  <image src="/static/images/ty.jpg" mode="widthFix"></image>
+</view>
+<view class="main">
+  <view class="modal_lin">
+    <view class="lin"></view>
+    <view class="font">邀请有礼</view>
+  </view>
+  <view class="inv_main">
+    <view class="left">
+      <view class="font">邀请新人好友，领水币</view>
+      <view class="info">成功邀请得
+        <text class="color_red">{{info.point}}</text> 水币</view>
+    </view>
+    <view class="right">
+      <button class="button" open-type="share">立即领水币</button>
+    </view>
+  </view>
+  <view class="modal_lin">
+    <view class="lin"></view>
+    <view class="font">我的邀请</view>
+  </view>
+  <view class="m__mai">
+    <view class="item">
+      <view class="number">{{info.level1point}}</view>
+      <view class="font">获得的水币</view>
+    </view>
+    <navigator class="item" url="/pages/member/invitation_list/index">
+      <view class="number">{{info.level1count}}人</view>
+      <view class="font">成功邀请</view>
+    </navigator>
+  </view>
+</view>

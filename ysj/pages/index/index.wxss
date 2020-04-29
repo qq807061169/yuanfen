@@ -1,0 +1,44 @@
+/* pages/index/index.wxss */
+image {
+  width: 100%;
+}
+.body {
+  height: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.scan {
+  width: 100%;
+  font-size: 32rpx;
+  color: #b5b5b5;
+}
+.scan image {
+  width: 40%;
+}
+.scan text {
+  display: block;
+  width: 45%;
+  margin: 50rpx auto 0;
+}
+.agreement {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32rpx;
+}
+.agreement image {
+  width: 5%;
+}
+.agreement text {
+  margin: 0 0 0 20rpx;
+  color: #747474;
+}
+.agreement button {
+  font-size: 32rpx;
+  color: #528921;
+}

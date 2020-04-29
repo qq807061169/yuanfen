@@ -1,0 +1,51 @@
+/* pages/equipment/info/index.wxss */
+.info_top{
+  display: flex;
+  align-items: center;
+  padding: 40rpx 30rpx;
+  width: 100%;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ccc;
+}
+.info_top .desc .title{
+    font-size: 34 rpx;
+  margin-bottom: 8rpx;
+}
+.info_top .desc .info{
+   font-size: 30rpx;
+  color: #a3a2a2;
+}
+.info_top  .btn{
+  color: #fff;
+  background-color: #528921;
+	box-shadow: 2px 4px 5px 0px 
+		rgba(218, 218, 218, 0.75);
+    text-align: center;
+  font-size: 32rpx;
+  padding: 10rpx 30rpx;
+  border-radius: 30px;
+}
+.sq_info .list{
+  padding: 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sq_info .list .title{
+  font-size: 32rpx
+}
+.sq_info .list .number{
+  color: #528921;
+  font-size: 32rpx;
+}
+.right-icon {
+  width: 20rpx;
+  height: 20rpx;
+  /* margin: 0 20rpx 0 10rpx; */
+}
+.sq_info .list .number img
+{
+  widows: 100rpx
+}

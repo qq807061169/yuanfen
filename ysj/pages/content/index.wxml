@@ -1,0 +1,11 @@
+<!--pages/content/index.wxml-->
+<view class="body">
+  <view class="head">
+    <view class="title">{{content.title}}</view>
+    <view class="date">发布时间：{{content.create_time}}</view>
+    <view class="thumb">
+      <image mode='widthFix' src="{{content.thumb}}"></image>
+    </view>
+  </view>
+  <view class="content">{{content.content}}</view>
+</view>
