@@ -1,0 +1,25 @@
+<!--pages/classification/newslist/index.wxml-->
+
+<!-- <import src="../../utils/wxParse/wxParse.wxml"/> -->
+<import src="/utils/wxParse/wxParse.wxml"></import>
+
+<loading wx:if="{{!show}}">加载中...</loading>
+<view class="page footer" wx:if="{{show}}">
+<view class='M-news-content contont'>
+  <view class='title'>{{rs.title}}</view>
+  <view class='title-info bottom'>
+
+    <view class='day'>{{rs.update_time}}</view>
+    <view class='ico'>
+      <view class='imgs'><image mode='widthFix' src='../../static/images/class/y.png'></image></view>
+      <view class='font'>浏览{{rs.read_num}}</view>
+    </view>
+  </view>
+  <view class='content'>
+<!-- <template is="wxParse" data="{{wxParseData:article.nodes}}"/> -->
+<!-- <template is="wxParse" data="{{wxParseData:article.nodes}}"/> -->
+    <rich-text nodes="{{nodes}}" bindtap="tap"></rich-text>
+
+  </view>
+</view>
+</view>

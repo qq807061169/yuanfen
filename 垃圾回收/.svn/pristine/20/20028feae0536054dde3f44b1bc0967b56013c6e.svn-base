@@ -1,0 +1,14 @@
+<!--pages/components/tabbar/index.wxml-->
+  <view class="tab-bar" style="color: {{tabBar.color}}; background: {{tabBar.backgroundColor}}; {{tabBar.position=='top'? 'top: 0' : 'bottom: 0'}};">
+    <block wx:for="{{tabBar.list}}" wx:key="pagePath" > 
+      <view hover-class='none' url="{{item.pagePath}}" open-type="redirect" class="{{item.clas}}" style="{{item.active? 'color: '+(item.selectedColor? item.selectedColor : tabBar.selectedColor) : ''}}" bindtap='swichNav'  data-current="{{index}}">
+      <!-- <button hover-class='none' class="button {{item.clas}}" style="{{item.active? 'color: '+(item.selectedColor? item.selectedColor : tabBar.selectedColor) : ''}}" data-type="{{item.pagePath}}" bindtap='gotoTab'> -->
+        <image src="{{ currentTab == index ? item.selectedIconPath : item.iconPath}}" class="img" bindtap="{{item.clas == 'menu-item menu-item2' ? 'scanQr' : '' }}"  data-current="{{index}}"></image>
+        <!-- <image src="{{item.iconPath}}"  wx:if="{{!item.active}}" class="img" bindtap="{{item.clas == 'menu-item2' ? 'scanQR' : '' }}"  data-current="{{index}}"></image> -->
+        <text  data-current="{{index}}" style="{{currentTab == index? 'color: '+(item.selectedColor? item.selectedColor : tabBar.selectedColor) : ''}}">{{item.text}}</text>
+      <!-- </button> -->
+      </view>
+    </block>
+      <!-- <button bindtap='scanQr' class='scanqr'></button> -->
+    <view class="clear"></view>
+  </view>

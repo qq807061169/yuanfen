@@ -1,0 +1,234 @@
+// pages/classification/answer/index.js
+var e = getApp(), a = (e.requirejs("icons"), e.requirejs("core"));
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    height:'',
+    yodes:'',
+    liShow:1,
+    switchs:1,
+    modal: false,
+    point:'',
+    listdb:[],
+    items: [
+      { name: 'USA', value: '美国' },
+      { name: 'CHN', value: '中国' },
+      { name: 'BRA', value: '巴西' },
+      { name: 'JPN', value: '日本' },
+      { name: 'ENG', value: '英国' },
+      { name: 'FRA', value: '法国' },
+    ],
+    daarr:[
+    ]
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    this.phoneH();
+    this.queryMultipleNodes();
+    this.showanswer();
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  },
+  //屏幕高度
+  phoneH(e){
+    let that = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        let clientHeight = res.windowHeight;
+        let clientWidth = res.windowWidth;
+        let ratio = 750 / clientWidth;
+        let height = clientHeight * ratio;
+        console.log(height)
+        that.setData({
+          height: height/2
+        });
+      }
+    });
+  },
+  //元素高度
+  queryMultipleNodes() {
+    const that = this
+    setTimeout(() => {
+      let query = wx.createSelectorQuery();
+      query.select('.answer-list').boundingClientRect();
+      // 执行查询
+      query.exec(ele => {
+        let e = ele[0];
+        console.log(e)
+        that.setData({
+          yodes: e.height+150
+        })
+      })
+    }, 300)
+  },
+  //下一题
+  next(e){
+    // let that = this
+    // let showid = that.data.liShow
+    // let arrLenth = that.data.daarr.length
+    // // console.log(arrLenth + "2")
+    // // console.log(showid-1 + "1")
+
+    // if (arrLenth ==  showid - 1 ){
+    //   a.toast("请选择答案", 'none')
+    //   return
+    // }
+    // console.log(that.data.listdb[showid - 1].answer)
+    // showid += 1
+    // that.setData({
+    //   liShow: showid
+    // })
+    // var timerTem = setTimeout(function () {
+    //   that.setData({
+    //     switchs: showid
+    //   })
+    // }, 1000)
+    let that = this
+    let showid = that.data.liShow
+    let arrLenth = that.data.daarr.length
+    console.log(arrLenth)
+    console.log(showid)
+    if (arrLenth == showid) {
+      a.toast("请选择答案", 'none')
+      return
+    }
+    // showid += 1
+    // that.setData({
+    //   liShow: showid
+    // })
+    // var timerTem = setTimeout(function () {
+      that.setData({
+        switchs: showid
+      })
+    // }, 1000)
+
+
+  },
+
+
+
+  // 提交
+  sumbits(e) {
+    let that = this
+    let showid = that.data.liShow
+    let arrLenth = that.data.daarr.length
+    console.log(arrLenth)
+    console.log(showid - 1)
+    if (arrLenth == showid ) {
+      a.toast("请选择答案", 'none')
+      return
+    }
+    a.post("&r=answer.getanswer", { answer_arr: that.data.daarr},function(res){
+      console.log(res)
+      if (res.error == 0){
+        that.setData({
+          pointjl:res.data.point,
+          point: res.message,
+          modal: true,
+        })
+      }else{
+        that.setData({
+          point: res.message,
+          modal: true,
+        })
+      }
+    })
+  },
+
+  radioChange: function (e) {
+    let that = this
+    // console.log('radio发生change事件，携带value值为：', e.detail.value)
+    // console.log(that.data.listdb[that.data.liShow - 1])
+    // console.log(that.data.liShow - 1)
+    if (that.data.liShow - 1 == that.data.daarr.length){
+      that.data.daarr.push({ "number": e.detail.value, "answer_id": that.data.listdb[that.data.liShow - 1].id })
+      console.log(that.data.daarr)
+    }else{
+      that.data.daarr.splice(that.data.liShow - 1, 1, { "number": e.detail.value, "answer_id": that.data.listdb[that.data.liShow - 1].id })
+      console.log(that.data.daarr)
+    }
+    let showid = that.data.liShow
+    showid += 1
+    that.setData({
+      liShow: showid
+    })
+  },
+
+  showanswer(e){
+    let that = this
+    a.get("&r=answer.doanswer",{},function(res){
+      if (res.error == 0){
+        that.setData({
+          listdb:res.list,
+          show:!0
+        })
+        // console.log(res.list)
+      }else{
+
+      }
+    })
+  },
+  modal_out() {
+    let that = this
+    // that.sign()
+    wx.reLaunch({
+      url: '/pages/classification/index/index?currentTab='+2,
+    })
+    that.setData({
+      modal: false
+    })
+  }
+})

@@ -1,0 +1,35 @@
+Page({
+
+  data: {
+    tel: 0
+  },
+
+  onLoad: function (options) {
+    wx.makePhoneCall({
+      phoneNumber: '123456789',
+      success: () => {
+        setTimeout(() => {
+          this.setData({
+            tel: 0
+          })
+        }, 500);
+      }
+    })
+  },
+
+  onShow: function () {
+    this.setData({
+      tel: 0
+    })
+  wx.switchTab({
+      url: '../index/index'
+    })
+  },
+
+  onHide: function () {
+    wx.switchTab({
+      url: '../index/index'
+    })
+  }
+
+})

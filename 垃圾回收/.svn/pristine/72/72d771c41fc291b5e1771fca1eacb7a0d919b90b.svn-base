@@ -1,0 +1,9 @@
+<!--pages/classification/newslist/index.wxml-->
+<loading wx:if="{{!show}}">加载中...</loading>
+<view class="page footer" wx:if="{{show}}">
+<import src="/utils/wxParse/wxParse.wxml"></import>
+
+  <view class='content'>
+<template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+  </view>
+</view>

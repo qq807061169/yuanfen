@@ -1,0 +1,139 @@
+/* pages/classification/details/index.wxss */
+page{
+  background: #fff;
+}
+.contont{
+   width: 95%;
+   margin: 20rpx auto 0;
+}
+.head_info{
+  height: 258rpx ;
+  background: #97c73f;
+  border-radius: 6px;
+  position: relative;
+  display: flex;
+}
+.head_info > .imgs{
+  position: absolute;
+  width: 50%;
+  left: 20rpx;
+  bottom: 0
+}
+.head_info >.infoLeft{
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+.head_info >.infoLeft >.imgs{
+  /* width: 50%; */
+  width: 160rpx;
+  height: 160rpx;
+  margin-left: 25rpx;
+}
+.head_info >.infoLeft >.imgs > image{
+  width: 100%;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+.head_info >.infoLeft >.info-name{
+  width: 50%;
+  margin-left: 25rpx;
+  font-size: 32rpx;
+  color: #fff;
+}
+.head_info >.inforight{
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+.head_info >.inforight >  .btnda{
+  width: 50%;
+}
+.head_info >.inforight >  .btnda,.head_info >.inforight >  .btndet{
+  width:155rpx;
+  height: 60rpx;
+  text-align: center;
+  border-radius: 30px;
+  line-height: 60rpx;
+  background: #ff9035;
+  color: #fff;
+  margin-left: 18rpx;
+  font-size: 30rpx;
+  margin-top: 15rpx;
+  border: 1px solid #fff;
+}
+/* .detalisInfo  > .listLine{
+  display: flex;
+  align-items: center;
+} */
+ 
+.detalisInfo  > .listLine{
+  width: 100%;
+  background: #fff;
+    padding: 15rpx 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+.detalisInfo  > .listLine> .lefts{
+  border-right:1px solid #f0f0f0;
+  
+}
+.detalisInfo  > .listLine> .rights,.detalisInfo  > .listLine> .lefts{
+  width:49.8%;
+  height: 60rpx;
+  line-height: 60rpx;
+  display: inline-block;
+color: #9d9e9e;
+  font-size: 32rpx;
+  text-align: center;
+}
+.detalisInfo > .list{
+  padding: 15rpx 0;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    background: #fff;
+    color: #9d9e9e;
+}
+.detalisInfo > .list > view{
+  border-right: 1px solid #f0f0f0;
+  width: 24.9%;
+  font-size: 32rpx;
+  text-align: center;
+  height: 60rpx;
+  line-height: 60rpx
+}
+.list-jf{
+  height: 150rpx;
+  width: 94%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+}
+.list-jf > .left > .title{
+  font-size: 34rpx;
+  color: #9d9e9e;
+  margin-bottom: 10rpx;
+}
+.list-jf > .left  > .font-bg .info{
+  padding:5rpx 10rpx;
+  display: inline-block;
+  height: 40rpx;
+  line-height: 40rpx;
+  background-color: #ade545;
+  text-align: center;
+  color: #fff;
+  font-size: 30rpx;
+  margin-right: 15rpx;
+}
+.list-jf > .right{
+  margin-right: 20rpx;
+  font-size: 32rpx;
+  color: #4da3ee;
+}
+.list-jf > .left  > .font-bg .data{
+  font-size: 30rpx;
+  color: #9d9e9e;
+}

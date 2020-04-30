@@ -1,0 +1,57 @@
+/* pages/classification/newslist/index.wxss */
+.contont{
+   width: 94%;
+   margin: 20rpx auto 0;
+}
+.title{
+  font-size: 33rpx; 
+  margin-bottom: 16rpx;
+}
+.title-info{
+  display: flex;
+  justify-content: space-between;
+}
+
+ .bottom > .day {
+/* width:50%; */
+color:#7a7a7a;
+font-size:32rpx;
+display:flex;
+align-items:center;
+
+}
+.bottom > .ico {
+width:50%;
+display:flex;
+align-items:center;
+/* flex-direction:column-reverse; */
+ justify-content:flex-end;
+
+}
+ .bottom > .ico >.imgs {
+width:10%;
+
+}
+ .bottom > .ico >.font {
+color:#7a7a7a;
+font-size:33rpx;
+margin-left:10rpx;
+margin-top:-3rpx;
+
+}
+
+.bottom > .ico >.imgs image{
+  width: 100%;
+}
+
+.content{
+  /* margin-top: 30rpx; */
+  line-height: 65rpx;
+  font-size: 33rpx;
+  width: 96%;
+  margin: 0 auto;
+}
+.content image{
+
+  width: 100%!important;
+}

@@ -1,0 +1,131 @@
+<!--pages/classification/personal/index.wxml-->
+<view class='head_info contont'>
+  <image mode='widthFix' src='/static/images/class/star.png' class='imgs'></image>
+  <view class='infoLeft'>
+    <block wx:if="{{user}}">
+      <!-- <image mode="widthFix" src="{{user.avatarurl}}" style="border-radius: 50%;"></image> -->
+      <view class='imgs'>
+        <image src='{{user.avatarUrl}}' mode='widthFix'></image>
+      </view>
+    </block>
+    <block wx:else>
+      <view class='imgs'>
+        <image src='/static/images/class/avatar.png' mode='widthFix'></image>
+      </view>
+    </block>
+
+    <view class='info-name'>
+      <view class='name'>{{user.nickName}}</view>
+      <view class='jf'>积分：{{datainfo.my_credit}}</view>
+    </view>
+  </view>
+  <view class='inforight'>
+
+    <block wx:if="{{datainfo.is_sign_today == 0}}">
+      <view class='btnda' bindtap='btndak'>打卡</view>
+    </block>
+    <block wx:else>
+      <view class='btndadis'>已打卡</view>
+    </block>
+    <view class='btndet' bindtap='disnav'>积分详情</view>
+  </view>
+</view>
+
+<view class='contont clock'>
+  <view class='top'>
+    <view class='clockData'>已连续打卡
+      <text style='color:#97c73f'>{{datainfo.serial_sign_day}}天</text>
+    </view>
+    <view class='clockInfo'>共签到
+      <text style='color:#97c73f'>{{datainfo.total_sign_day}}天</text>
+    </view>
+  </view>
+  <view class='bottom'>
+
+    <block wx:for="{{dataarr}}">
+      <view class='item'>
+        <view class='imgs' style='background:{{item.is_sign == 1 ? "#97c73f" :""}}'>
+          <image src='/static/images/class/g.png' mode='widthFix'></image>
+        </view>
+        <view class='font-number'>
+          {{item.date}}
+        </view>
+      </view>
+    </block>
+
+
+
+  </view>
+</view>
+
+
+<view class='contont task'>
+  <view class='top'>
+    <view class='clockData'>积分任务</view>
+    <view class='clockInfo'>做任务赚积分 </view>
+  </view>
+
+
+  <block wx:for="{{task}}">
+    <block wx:if="{{item.type == 1}}">
+
+      <view class='bottom'>
+        <view class='imgs'>
+          <image src='/static/images/class/h.png' mode='widthFix'></image>
+        </view>
+        <view class='info'>
+          <view class='font-task'>浏览资讯
+            <text>需浏览{{item.num}}篇文章</text>
+          </view>
+          <view class='font-info'>浏览内容可获得积分哦</view>
+        </view>
+        <block wx:if="{{item.is_finish == 0}}">
+          <view class='btns' bindtap='newsnav'>
+            去完成
+          </view>
+        </block>
+        <block wx:else>
+          <view class='disp'>
+            已完成
+          </view>
+        </block>
+      </view>
+    </block>
+    <block wx:if="{{item.type == 2}}">
+      <view class='bottom'>
+        <view class='imgs'>
+          <image src='/static/images/class/z.png' mode='widthFix'></image>
+        </view>
+        <view class='info'>
+          <view class='font-task'>答题</view>
+          <view class='font-info'>完成答题可获得积分</view>
+        </view>
+        <block wx:if="{{item.is_finish == 0}}">
+          <view class='btns'>
+            <navigator hover-class='none' class="myorder" url="../../../classification/answer/index">
+              去完成
+            </navigator>
+          </view>
+        </block>
+        <block wx:else>
+          <view class='disp'>
+            已完成
+          </view>
+        </block>
+      </view>
+    </block>
+  </block>
+  <block wx:if='{{modal == true}}'>
+    <view class='ysj-showModal' wx:if='{{!showModal}}'>
+      <view class='achieve_msg-modal'>
+      </view>
+      <view class='ysj-Modal-wrap'>
+        <view class='Modal-Font'>签到</view>
+        <image mode='widthFix' src='/static/images/class/modal.png' class='modal-img'></image>
+        <image mode='widthFix' src='/static/images/class/gb.png' class='modal-out' bindtap='modal_out'></image>
+        <view class='Modal-font-info'>{{qd_info}}</view>
+      </view>
+    </view>
+  </block>
+
+</view>

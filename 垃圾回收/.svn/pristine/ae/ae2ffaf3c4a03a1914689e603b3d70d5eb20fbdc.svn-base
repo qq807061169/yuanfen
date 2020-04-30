@@ -1,0 +1,153 @@
+<!--pages/classification/index/index.wxml-->
+<view class='headIndex'>
+  <view class='images'>
+    <swiper class='detail-imgs' indicator-dots="{{false}}" autoplay='{{true}}' interval="{{5000}}" duration="{{500}}" circular="{{true}}" bindchange='bindchange' style="height:{{imgheights[current]}}rpx;">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item style="">
+          <image src="{{item}}" class='image-view' style="height:{{imgheights[current]}}rpx;width:{{imgwidth}}rpx;" bindload="imageLoad" data-src='{{item}}'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <!--重置小圆点的样式  -->
+    <view class="dots">
+      <block wx:for="{{imgUrls}}">
+        <view class="dot{{index == current ? ' active' : ''}}"></view>
+      </block>
+    </view>
+  </view>
+</view>
+<view class='headClass contont'>
+  <view class='classLeft'>
+  <navigator>
+    <image src='../../static/images/class/class1.png' mode='widthFix'></image>
+  </navigator>
+  </view>
+  <view class='classright'>
+      <navigator>
+        <image src='../../static/images/class/class2.png' mode='widthFix'></image>
+      </navigator>
+  </view>
+</view>
+
+<view class='classNews contont'>
+  <view class='M-title'>
+    <view class='info'>垃圾分类资讯</view>
+    <view class='more'>
+      <navigator>更多</navigator>
+    </view>
+  </view>
+
+  <view class='M-news-list'>
+    <view class='item'>
+      <navigator class='item-list'>
+        <view class='item-left'><image src='../../static/images/class/listn4.png' mode='widthFix'></image></view>
+        <view class='item-right'>
+          <view class='top'>在朋友圈刷屏的垃圾分类图有误！官宣版来了</view>
+          <view class='bottom'>
+            <view class='day'>2019-06-21</view>
+            <view class='ico'>
+              <view class='imgs'><image mode='widthFix' src='../../static/images/class/y.png'></image></view>
+              <view class='font'>浏览 1205</view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+
+    <view class='item'>
+      <navigator class='item-list'>
+        <view class='item-left'><image src='../../static/images/class/listn4.png' mode='widthFix'></image></view>
+        <view class='item-right'>
+          <view class='top'>在朋友圈刷屏的垃圾分类图有误！官宣版来了</view>
+          <view class='bottom'>
+            <view class='day'>2019-06-21</view>
+            <view class='ico'>
+              <view class='imgs'><image mode='widthFix' src='../../static/images/class/y.png'></image></view>
+              <view class='font'>浏览 1205</view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+
+
+<view class='item'>
+      <navigator class='item-list'>
+        <view class='item-left'><image src='../../static/images/class/listn4.png' mode='widthFix'></image></view>
+        <view class='item-right'>
+          <view class='top'>在朋友圈刷屏的垃圾分类图有误！官宣版来了</view>
+          <view class='bottom'>
+            <view class='day'>2019-06-21</view>
+            <view class='ico'>
+              <view class='imgs'><image mode='widthFix' src='../../static/images/class/y.png'></image></view>
+              <view class='font'>浏览 1205</view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+
+    <view class='item'>
+      <navigator class='item-list'>
+        <view class='item-left'><image src='../../static/images/class/listn4.png' mode='widthFix'></image></view>
+        <view class='item-right'>
+          <view class='top'>在朋友圈刷屏的垃圾分类图有误！官宣版来了</view>
+          <view class='bottom'>
+            <view class='day'>2019-06-21</view>
+            <view class='ico'>
+              <view class='imgs'><image mode='widthFix' src='../../static/images/class/y.png'></image></view>
+              <view class='font'>浏览 1205</view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+
+    <view class='item'>
+      <navigator class='item-list'>
+        <view class='item-left'><image src='../../static/images/class/listn4.png' mode='widthFix'></image></view>
+        <view class='item-right'>
+          <view class='top'>在朋友圈刷屏的垃圾分类图有误！官宣版来了</view>
+          <view class='bottom'>
+            <view class='day'>2019-06-21</view>
+            <view class='ico'>
+              <view class='imgs'><image mode='widthFix' src='../../static/images/class/y.png'></image></view>
+              <view class='font'>浏览 1205</view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+
+    <view class='item'>
+      <navigator class='item-list'>
+        <view class='item-left'><image src='../../static/images/class/listn4.png' mode='widthFix'></image></view>
+        <view class='item-right'>
+          <view class='top'>在朋友圈刷屏的垃圾分类图有误！官宣版来了</view>
+          <view class='bottom'>
+            <view class='day'>2019-06-21</view>
+            <view class='ico'>
+              <view class='imgs'><image mode='widthFix' src='../../static/images/class/y.png'></image></view>
+              <view class='font'>浏览 1205</view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+    <view class='item'>
+      <navigator class='item-list'>
+        <view class='item-left'><image src='../../static/images/class/listn4.png' mode='widthFix'></image></view>
+        <view class='item-right'>
+          <view class='top'>在朋友圈刷屏的垃圾分类图有误！官宣版来了</view>
+          <view class='bottom'>
+            <view class='day'>2019-06-21</view>
+            <view class='ico'>
+              <view class='imgs'><image mode='widthFix' src='../../static/images/class/y.png'></image></view>
+              <view class='font'>浏览 1205</view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>

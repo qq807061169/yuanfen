@@ -1,0 +1,176 @@
+/* pages/classification/index/index.wxss */
+/* page{
+  background: #fff;
+} */
+.headIndex{
+  width: 95%;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.contont{
+   width: 95%;
+   margin: 20rpx auto 0;
+}
+.headIndex image{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+/*用来包裹所有的小圆点  */
+.dots{  
+  /* width: 156rpx; */
+  height: 36rpx; 
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+   left: 50%;
+    top: 93%;
+    transform: translate(-50%, -50%);
+}  
+/*未选中时的小圆点样式 */
+.dot{  
+  width: 50rpx;  
+  height: 17rpx;   
+  margin-right: 26rpx;
+  background-color: white;
+}  
+/*选中以后的小圆点样式  */
+.active{  
+width: 50rpx;  
+  height: 17rpx;  
+  background-color: coral;
+}  
+.images{
+  height: auto;
+  position: relative; 
+}
+.images swiper{
+  overflow: hidden;
+  border-radius: 6px;
+}
+.images swiper swiper-item{
+   overflow: hidden;
+  border-radius: 6px;
+}
+.headClass{
+  display: flex;
+  flex-flow:  row nowrap;
+  justify-content: space-between;
+  height: 200rpx;
+}
+.headClass > .classLeft{
+  width: 49%;
+}
+.headClass > .classLeft image{
+  width: 100%
+}
+.headClass > .classright{
+  width: 49%;
+}
+.headClass > .classright image{
+  width: 100%
+}
+
+.M-title{
+  width: 100%;
+  position: relative;
+  height: 55rpx;
+}
+.M-title> .info{
+width: 193rpx;
+font-size: 32rpx;
+position: absolute;
+left: 0;
+right: 0;
+margin-left: auto;
+margin-right: auto;
+color: #666
+}
+.M-title> .more{
+font-size: 28rpx;
+position: absolute;
+right: 10rpx;
+width: 115rpx;
+height: 40rpx;
+background: #97c73f;
+border-radius: 20px;
+color: #fff;
+text-align: center
+}
+.M-news-list{
+  margin-top: 15rpx;
+}
+.M-news-list > .item{
+  width: 100%;
+  height: 210rpx;
+  padding: 16rpx;
+  background: #f5f5f5;
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin-bottom: 30rpx;
+}
+.M-news-list > .item > .item-list{
+  display: flex;
+}
+ 
+.M-news-list > .item > .item-list > .item-left{
+  width: 36%;
+  margin-right: 20rpx;
+}
+.M-news-list > .item > .item-list > .item-right{
+  width: 60%;
+}
+.M-news-list > .item > .item-list > .item-left image{
+  width: 100%;
+}
+.M-news-list > .item > .item-list > .item-right > .top{
+  height: 130rpx;
+  color: #333;
+  font-size: 32rpx;
+}
+.M-news-list > .item > .item-list > .item-right > .bottom{
+  display: flex;
+  justify-content: space-between;
+  height: 
+}
+.M-news-list > .item > .item-list > .item-right > .bottom > .day{
+  width: 50%;
+  color: #7a7a7a;
+  font-size: 32rpx;
+display: flex;
+  align-items: center;
+}
+.M-news-list > .item > .item-list > .item-right > .bottom > .ico{
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+.M-news-list > .item > .item-list > .item-right > .bottom > .ico >.imgs{
+  width: 20%;
+}
+.M-news-list > .item > .item-list > .item-right > .bottom > .ico >.imgs image{
+  width: 100%;
+}
+.M-news-list > .item > .item-list > .item-right > .bottom > .ico >.font{
+  color: #7a7a7a;
+  font-size: 30rpx;
+  margin-left: 10rpx;
+}
+.container {width: 100%;height: 100%;font-size: 28rpx;}
+.menu-item {width: 35%;text-align: center;padding: 4px 0 !important;font-size: 32rpx;color: #747474;position: static;}
+.menu-item2{border-right:none;}
+/* .menu-item2 image {width: 110rpx;height: 125rpx;position:absolute;top:-45rpx;right:50%;margin-right:-60rpx;} */
+.img {width: 55rpx;height: 55rpx;display: block;margin:5rpx auto 10rpx;}
+.clear {clear: both;}
+.tab-bar {display: flex;border-top: 2rpx solid #e5e5e5;position: fixed;width: 100%;height: 115rpx;}
+.button {background: none;border: none;line-height: normal;padding: 0;margin: 0;}
+.button::after {border: none;}
+.mask {width: 100%;height: 100%;background: #fff;position: fixed;bottom: 0;}
+.body {margin-bottom: 200rpx;}
+.colors{color: red}
+.scanqr{width: 35%;height: 115rpx;position:absolute;top:0;right:32%;opacity: 0}
+.menu-item > text{
+  font-size: 26rpx;
+}
+.height{height: 115rpx;width: 100%}

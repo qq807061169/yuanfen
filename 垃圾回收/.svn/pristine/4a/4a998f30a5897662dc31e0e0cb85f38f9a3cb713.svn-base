@@ -1,0 +1,79 @@
+<!--pages/classification/answer/index.wxml-->
+<loading wx:if="{{!show}}">加载中...</loading>
+<view class="page footer" wx:if="{{show}}">
+<view class='answer'>
+  <view class='imgBg' style='width:100%;height:100%;'>
+    <image src='../../static/images/class/bg.jpg' style="width:100%;height:{{yodes>height ?yodes +'px': height+'px'}};" ></image>
+  </view>
+  <view class='listRadiusd'>
+  </view>
+  <view class='listRadius'>
+    <block wx:for="{{listdb}}">
+     <view class='list' style="background:#{{item.id_show == liShow ? 'dcff86' : ''}}"> </view>
+    </block>
+    
+  </view>
+
+  <block wx:for="{{listdb}}">
+  <view class="answer-list {{item.id_show == switchs ? 'showList' : ''}}" >
+    <view class='list'>
+      <view class='title'>{{item.title}}</view>
+      <view class='img'>
+        <image src='{{item.thumb}}' ></image>
+      </view>
+      <view class='rad'>
+        <radio-group class="radio-group" bindchange="radioChange">
+          <view class='li'>
+           <block wx:for="{{item.options}}" wx:for-index="idx" wx:for-item="itemName" >
+            <!-- <block wx:if="{{item.id_show == liShow}}">
+              <radio class="radio"  value="{{itemName.number}}" checked="{{itemName.checked}}" >
+                <text>{{itemName.content}}</text>
+              </radio>
+            </block>
+            <block wx:else>
+              <radio class="radio {{itemName.number == item.answer ? 'correct' : 'error'}}"  value="{{itemName.number}}" checked="{{itemName.checked}}" >
+                <text>{{itemName.content}}</text>
+              </radio>
+            </block> -->
+
+              <radio class='radio {{item.id_show == liShow ? "" :(itemName.number == item.answer ? "correct" : "error") }}'  value="{{itemName.number}}" checked="{{itemName.checked}}" >
+                <text>{{itemName.content}}</text>
+              </radio>
+
+
+
+          </block>
+          </view>
+        </radio-group>
+      </view>
+    </view>
+  </view>
+ </block>
+
+ <block wx:if="{{listdb.length>liShow}}">
+  <view class='btn-next' bindtap='next'>下一题</view>
+</block>
+
+   <block wx:if="{{listdb.length == liShow}}">
+  <view class='btn-next' bindtap='sumbits'>提交</view>
+ </block>
+
+</view>
+
+
+  <block wx:if='{{modal == true}}'>
+
+<view class='ysj-showModal' wx:if='{{!showModal}}'>
+<view class='achieve_msg-modal'>
+</view>
+  <view class='ysj-Modal-wrap'>
+    <view class='Modal-Font'>答题完成</view>
+    <image  mode='widthFix' src='/static/images/class/modal.png' class='modal-img'></image>
+    <image mode='widthFix' src='/static/images/class/gb.png' class='modal-out' bindtap='modal_out'></image>
+    <view class='Modal-font-info'>{{point || pointjl}}</view>
+  </view>
+</view>
+</block>
+
+
+</view>

@@ -1,0 +1,45 @@
+<!--pages/classification/details/index.wxml-->
+<loading wx:if="{{!show}}">加载中...</loading>
+<view class="page footer" wx:if="{{show}}">
+<view class='head_info contont'>
+  <image mode='widthFix' src='../../static/images/class/star.png' class='imgs'></image>
+  <view class='infoLeft'>
+    <block wx:if="{{user}}">
+        <!-- <image mode="widthFix" src="{{user.avatarurl}}" style="border-radius: 50%;"></image> -->
+         <view class='imgs'><image src='{{user.avatarUrl}}' mode='widthFix'></image></view>
+      </block>
+      <block wx:else>
+         <view class='imgs'><image src='../../static/images/class/avatar.png' mode='widthFix'></image></view>
+      </block>
+    <view class='info-name'>
+      <view class='name'>{{user.nickName}}</view>
+      <view class='jf'>积分：{{jf}}</view>
+    </view>
+  </view>
+  <view class='inforight'>
+    <!-- <view class='btnda' style='margin-left:160rpx;'>打卡</view> -->
+    <!-- <view class='btndet'><navigator hover-class='none' class="myorder" url="pages/classification/details/index">积分详情</navigator></view> -->
+  </view>
+</view>
+
+<block wx:for="{{list}}">
+<view class='list-jf'>
+  <view class='left'>
+    <view class='title'>{{item.log}}</view>
+    <block wx:if="{{item.type == 0}}">
+    <view class='font-bg'><text class='info' >日常签到</text> <text class='data'>{{item.date}}</text> </view>
+    </block>
+    <block wx:if="{{item.type == 1}}">
+    <view class='font-bg'><text class='info' style='background:#ff8e09'>连续签到奖励</text> <text class='data'>{{item.date}}</text>     </view>
+   </block>
+    <block wx:if="{{item.type == 3}}">
+    <view class='font-bg'><text class='info' style='background:#ff8e09'>浏览文章</text> <text class='data'>{{item.date}}</text>     </view>
+   </block>
+    <block wx:if="{{item.type == 4}}">
+    <view class='font-bg'><text class='info' style='background:#ff8e09'>答题奖励</text> <text class='data'>{{item.date}}</text>     </view>
+   </block>
+  </view>
+  <view class='right'>+{{item.credit}}</view>
+</view>
+</block>
+</view>

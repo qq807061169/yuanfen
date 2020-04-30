@@ -1,0 +1,50 @@
+<!--pages/classification/newslist/index.wxml-->
+<view class='M-news-list contont'>
+    <view class='item'>
+      <navigator class='item-list'>
+        <view class='item-left'><image src='../../../static/images/class/listn4.png' mode='widthFix'></image></view>
+        <view class='item-right'>
+          <view class='top'>在朋友圈刷屏的垃圾分类图有误！官宣版来了</view>
+          <view class='bottom'>
+            <view class='day'>2019-06-21</view>
+            <view class='ico'>
+              <view class='imgs'><image mode='widthFix' src='../../../static/images/class/y.png'></image></view>
+              <view class='font'>浏览 1205</view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+
+    <view class='item'>
+      <navigator class='item-list'>
+        <view class='item-left'><image src='../../../static/images/class/listn4.png' mode='widthFix'></image></view>
+        <view class='item-right'>
+          <view class='top'>在朋友圈刷屏的垃圾分类图有误！官宣版来了</view>
+          <view class='bottom'>
+            <view class='day'>2019-06-21</view>
+            <view class='ico'>
+              <view class='imgs'><image mode='widthFix' src='../../../static/images/class/y.png'></image></view>
+              <view class='font'>浏览 1205</view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+
+    <view class='item'>
+      <navigator class='item-list'>
+        <view class='item-left'><image src='../../../static/images/class/listn4.png' mode='widthFix'></image></view>
+        <view class='item-right'>
+          <view class='top'>在朋友圈刷屏的垃圾分类图有误！官宣版来了</view>
+          <view class='bottom'>
+            <view class='day'>2019-06-21</view>
+            <view class='ico'>
+              <view class='imgs'><image mode='widthFix' src='../../../static/images/class/y.png'></image></view>
+              <view class='font'>浏览 1205</view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </view>

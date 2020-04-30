@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "component_index": "../../../components/index/index",
+    "component_my":"../../../components/personal/index"
+  },
+  "navigationBarTitleText": "博罗县垃圾分类宣传",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black"
+}

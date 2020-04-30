@@ -1,0 +1,133 @@
+<!--pages/classification/personal/index.wxml-->
+<view class='head_info contont'>
+<image  mode='widthFix' src='../../../static/images/class/star.png' class='imgs'></image>
+  <view class='infoLeft'>
+    <view class='imgs'><image src='../../../static/images/class/avatar.png' mode='widthFix'></image></view>
+    <view class='info-name'>
+      <view class='name'>kezi</view>
+      <view class='jf'>积分：200</view>
+    </view>
+  </view>
+  <view class='inforight'>
+    <view class='btnda'>打卡</view>
+    <view class='btndet'><navigator hover-class='none' class="myorder" url="pages/classification/details/index">积分详情</navigator></view>
+  </view>
+</view>
+
+<view class='contont clock'>
+  <view class='top'>
+    <view class='clockData'>已连续打卡<text style='color:#97c73f'>4天</text></view>
+    <view class='clockInfo'>明日打卡可获得 <text style='color:#97c73f'>5积分</text></view>
+  </view>
+  <view class='bottom'>
+    <view class='item'>
+      <view class='imgs'>
+        <image src='../../../static/images/class/g.png' mode='widthFix'></image>
+      </view>
+      <view class='font-number'>
+        6.18
+      </view>
+    </view>
+
+    <view class='item'>
+      <view class='imgs'>
+        <image src='../../../static/images/class/g.png' mode='widthFix'></image>
+      </view>
+      <view class='font-number'>
+        6.18
+      </view>
+    </view>
+
+    <view class='item'>
+      <view class='imgs'>
+        <image src='../../../static/images/class/g.png' mode='widthFix'></image>
+      </view>
+      <view class='font-number'>
+        6.18
+      </view>
+    </view>
+
+    <view class='item'>
+      <view class='imgs'>
+        <image src='../../../static/images/class/g.png' mode='widthFix'></image>
+      </view>
+      <view class='font-number'>
+        6.18
+      </view>
+    </view>
+
+    <view class='item'>
+      <view class='imgs'>
+        <image src='../../../static/images/class/g.png' mode='widthFix'></image>
+      </view>
+      <view class='font-number'>
+        6.18
+      </view>
+    </view>
+
+    <view class='item'>
+      <view class='imgs'>
+        <image src='../../../static/images/class/g.png' mode='widthFix'></image>
+      </view>
+      <view class='font-number'>
+        6.18
+      </view>
+    </view>
+    
+    <view class='item'>
+      <view class='imgs'>
+        <image src='../../../static/images/class/g.png' mode='widthFix'></image>
+      </view>
+      <view class='font-number'>
+        6.18
+      </view>
+    </view>
+
+  </view>
+</view>
+
+
+<view class='contont task'>
+  <view class='top'>
+    <view class='clockData'>积分任务</view>
+    <view class='clockInfo'>做任务赚积分 </view>
+  </view>
+  <view class='bottom'>
+    <view class='imgs'>
+      <image src='../../../static/images/class/b.png' mode='widthFix'></image>
+    </view>
+    <view class='info'>
+      <view class='font-task'>打卡</view>
+      <view class='font-info'>连续签到可获得积分</view>
+    </view>
+    <view class='btns'>
+    去完成
+    </view>
+  </view>
+
+   <view class='bottom'>
+    <view class='imgs'>
+      <image src='../../../static/images/class/h.png' mode='widthFix'></image>
+    </view>
+    <view class='info'>
+      <view class='font-task'>浏览资讯</view>
+      <view class='font-info'>浏览内容可获得积分哦</view>
+    </view>
+    <view class='btns'>
+    去完成
+    </view>
+  </view>
+ <view class='bottom'>
+    <view class='imgs'>
+      <image src='../../../static/images/class/z.png' mode='widthFix'></image>
+    </view>
+    <view class='info'>
+      <view class='font-task'>答题</view>
+      <view class='font-info'>完成答题可获得积分</view>
+    </view>
+    <view class='btns'>
+    去完成
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,42 @@
+<!--pages/classification/answer/index.wxml-->
+<view class='answer'>
+  <view class='imgBg' style='width:100%;height:100%;'>
+    <image src='../../static/images/class/bg.jpg' style="width:100%;height:{{yodes>height ?yodes +'px': height+'px'}};" ></image>
+  </view>
+  <view class='listRadiusd'>
+  </view>
+  <view class='listRadius'>
+    <block wx:for="{{listdb}}">
+     <view class='list' style="background:#{{item.idshow == liShow ? 'dcff86' : ''}}"> </view>
+    </block>
+    
+  </view>
+
+  <block wx:for="{{listdb}}">
+  <view class="answer-list {{item.idshow == liShow ? 'showList' : ''}}" >
+    <view class='list'>
+      <view class='title'>{{item.question}}</view>
+      <view class='rad'>
+        <radio-group class="radio-group" bindchange="radioChange">
+          <view class='li'>
+           <block wx:for="{{item.askoptions}}" wx:for-index="idx" wx:for-item="itemName" >
+            <radio class="radio"  value="{{itemName.name}}" checked="{{itemName.checked}}">
+              <text>{{itemName.value}}</text>
+            </radio>
+          </block>
+          </view>
+        </radio-group>
+      </view>
+    </view>
+  </view>
+ </block>
+
+ <block wx:if="{{listdb.length>liShow}}">
+  <view class='btn-next' bindtap='next'>下一题{{listdb.length}}</view>
+</block>
+
+   <block wx:if="{{listdb.length == liShow}}">
+  <view class='btn-next' bindtap='sumbits'>提交{{liShow}}</view>
+ </block>
+
+</view>

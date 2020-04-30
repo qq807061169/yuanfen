@@ -1,0 +1,26 @@
+<!--pages/classification/newslist/index.wxml-->
+<loading wx:if="{{!show}}">加载中...</loading>
+<view class="page footer" wx:if="{{show}}">
+<view class='M-news-list contont'>
+  
+ <block wx:for="{{list}}">
+    <view class='item' bindtap='list' data-id="{{item.id}}">
+      <view class='item-list'>
+        <view class='item-left'><image src='{{item.cover_url}}' mode='widthFix'></image></view>
+        <view class='item-right'>
+          <view class='top'>{{item.title}}</view>
+          <view class='bottom'>
+            <view class='day'>{{item.create_time}}</view>
+            <view class='ico'>
+              <view class='imgs'><image mode='widthFix' src='../../static/images/class/y.png'></image></view>
+              <view class='font'>{{item.read_num}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    </block>
+  
+
+  </view>
+    </view>

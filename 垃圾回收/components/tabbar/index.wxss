@@ -1,0 +1,14 @@
+/* pages/components/tabbar/index.wxss */
+.container {width: 100%;height: 100%;font-size: 28rpx;}
+.menu-item {width: 35%;text-align: center;padding: 4px 0 !important;font-size: 32rpx;color: #747474;position: static;}
+.menu-item2{border-right:none;}
+.menu-item2 image {width: 110rpx;height: 125rpx;position:absolute;top:-45rpx;right:50%;margin-right:-60rpx;}
+.img {width: 40rpx;height: 40rpx;display: block;margin: auto;}
+.clear {clear: both;}
+.tab-bar {display: flex;border-top: 2rpx solid #e5e5e5;position: fixed;width: 100%;}
+.button {background: none;border: none;line-height: normal;padding: 0;margin: 0;}
+.button::after {border: none;}
+.mask {width: 100%;height: 100%;background: #fff;position: fixed;bottom: 0;}
+.body {margin-bottom: 200rpx;}
+.colors{color: red}
+.scanqr{width: 35%;height: 146rpx;position:absolute;top:-45rpx;right:32%;opacity: 0}

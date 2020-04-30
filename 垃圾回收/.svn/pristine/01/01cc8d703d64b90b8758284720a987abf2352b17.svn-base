@@ -1,0 +1,145 @@
+<!--pages/classification/index/index.wxml-->
+
+
+
+
+
+  <!-- <view hidden="{{currentTab == 0? false: true}}">
+    <component_index/>
+  </view>
+  <view hidden="{{currentTab == 1? false: true}}">
+     <component_car/>
+  </view>
+  <view hidden="{{currentTab == 2? false: true}}">
+    <component_my/>
+  </view>
+
+
+
+<view class='height'>
+  
+</view> -->
+
+  <!--pages/components/tabbar/index.wxml-->
+  <!-- <view class="tab-bar" style="color: {{tabBar.color}}; background: {{tabBar.backgroundColor}}; {{tabBar.position=='top'? 'top: 0' : 'bottom: 0'}};">
+    <block wx:for="{{tabBar.list}}" wx:key="pagePath" > 
+      <view hover-class='none' url="{{item.pagePath}}" open-type="redirect" class="{{item.clas}}" style="{{item.active? 'color: '+(item.selectedColor? item.selectedColor : tabBar.selectedColor) : ''}}" bindtap='swichNav'  data-current="{{index}}">
+        <image src="{{ currentTab == index ? item.selectedIconPath : item.iconPath}}" class="img" bindtap="{{item.clas == 'menu-item menu-item2' ? 'scanQr' : '' }}"  data-current="{{index}}"></image>
+        <text  data-current="{{index}}" style="{{currentTab == index? 'color: '+(item.selectedColor? item.selectedColor : tabBar.selectedColor) : ''}}">{{item.text}}</text>
+      </view>
+    </block>
+      <button bindtap='scanQr' class='scanqr'></button>
+    <view class="clear"></view>
+  </view> -->
+
+
+
+
+
+
+
+
+  <!--pages/classification/index/index.wxml-->
+<loading wx:if="{{!show}}">加载中...</loading>
+<view class="page" wx:if="{{show}}">
+<view class='headIndex'>
+  <view class='images'>
+    <swiper class='detail-imgs' indicator-dots="{{false}}" autoplay='{{true}}' interval="{{5000}}" duration="{{500}}" circular="{{true}}" bindchange='bindchange' style="height:{{imgheights[current]}}rpx;">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item style="">
+          <image src="{{item}}" class='image-view' style="height:{{imgheights[current]}}rpx;width:100%;" bindload="imageLoad" data-src='{{item}}'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <!--重置小圆点的样式  -->
+    <view class="dots">
+      <block wx:for="{{imgUrls}}">
+        <view class="dot{{index == current ? ' active' : ''}}"></view>
+      </block>
+    </view>
+  </view>
+</view>
+<view class='headClass contont'>
+  <view class='classLeft' bindtap='listClass' data-id="4">
+  <navigator>
+    <image src='/static/images/class/class1.png' mode='widthFix'></image>
+  </navigator>
+  </view>
+  <view class='classright'  bindtap='listClass' data-id="5">
+      <navigator>
+        <image src='/static/images/class/class2.png' mode='widthFix'></image>
+      </navigator>
+  </view>
+</view>
+
+<view class='M-title'>
+    <view class='process'>处理流程</view>
+    
+  </view>
+<view class='navclass'>
+  <view class='ico' bindtap='listClass' data-id="6">
+    <image src='/static/images/class/ico1.png' mode='widthFix'></image>
+    <view class='font'>可回收物</view>
+  </view>
+   <view class='ico' bindtap='listClass' data-id="7">
+    <image src='/static/images/class/ico2.png' mode='widthFix'></image>
+    <view class='font'>有机易腐垃圾</view>
+  </view>
+  <view class='ico' bindtap='listClass' data-id="8">
+    <image src='/static/images/class/ico3.png' mode='widthFix'></image>
+    <view class='font'>有害垃圾</view>
+  </view>
+  <view class='ico' bindtap='listClass' data-id="9">
+    <image src='/static/images/class/ico4.png' mode='widthFix'></image>
+    <view class='font'>其他垃圾</view>
+  </view>
+</view>
+
+<view class='classNews contont'>
+  <view class='M-title'>
+    <view class='info'>垃圾分类资讯</view>
+    <view class='more'>
+      <navigator url='/classification/newslist/index'>更多</navigator>
+    </view>
+  </view>
+
+  <view class='M-news-list'>
+   <block wx:for="{{list}}">
+    <view class='item' bindtap='list' data-id="{{item.id}}">
+      <view class='item-list'>
+        <view class='item-left'><image src='{{item.cover_url}}' mode='widthFix'></image></view>
+        <view class='item-right'>
+          <view class='top'>{{item.title}}</view>
+          <view class='bottom'>
+            <view class='day'>{{item.create_time}}</view>
+            <view class='ico'>
+              <view class='imgs'><image mode='widthFix' src='/static/images/class/y.png'></image></view>
+              <view class='font'>{{item.read_num}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    </block>
+    <!-- <view class='item'>
+      <view class='item-list'>
+        <view class='item-left'><image src='../../static/images/class/listn4.png' mode='widthFix'></image></view>
+        <view class='item-right'>
+          <view class='top'>在朋友圈刷屏的垃圾分类图有误！官宣版来了</view>
+          <view class='bottom'>
+            <view class='day'>2019-06-21</view>
+            <view class='ico'>
+              <view class='imgs'><image mode='widthFix' src='../../static/images/class/y.png'></image></view>
+              <view class='font'>浏览 1205</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view> -->
+
+    
+
+
+  </view>
+</view>
+</view>

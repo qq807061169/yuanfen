@@ -1,0 +1,39 @@
+<!--pages/classification/details/index.wxml-->
+<view class='head_info contont'>
+  <image mode='widthFix' src='../../static/images/class/star.png' class='imgs'></image>
+  <view class='infoLeft'>
+    <view class='imgs'>
+      <image src='../../static/images/class/avatar.png' mode='widthFix'></image>
+    </view>
+    <view class='info-name'>
+      <view class='name'>kezi</view>
+      <view class='jf'>积分：200</view>
+    </view>
+  </view>
+  <view class='inforight'>
+    <view class='btnda' style='margin-left:160rpx;'>打卡</view>
+    <!-- <view class='btndet'><navigator hover-class='none' class="myorder" url="pages/classification/details/index">积分详情</navigator></view> -->
+  </view>
+</view>
+
+<view class='detalisInfo'>
+  <view class='listLine'>
+    <view class='lefts' style='color:#92bd56'>连续打卡积分</view>
+    <view class='rights'>其他奖励积分</view>
+  </view>
+
+  <view class='list'>
+    <view class='start'>
+    开始时间
+    </view>
+    <view class='end'>
+    介绍时间
+    </view>
+    <view class='data'>
+    连续天数
+    </view>
+    <view class='jf'>
+    奖励积分
+    </view> 
+  </view>
+</view>
