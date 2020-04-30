@@ -1,0 +1,11 @@
+{
+  
+    "backgroundColor": "#fafafa",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+      "componentgps":"/components/showgps/index"
+    }
+}

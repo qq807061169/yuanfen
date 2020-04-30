@@ -1,0 +1,13 @@
+<!--components/showgps/index.wxml-->
+<view class="modal_show" wx:if="{{show}}"></view>
+<view class="modal_flex" wx:if="{{show}}">
+  <view class="modal">
+    <view class="title">温馨提示</view>
+    <view class="info">为了您更好的使用，您可以设置相关授权信息后，重新打开小程序体验！</view>
+
+    <view class="btns_on">
+      <button class="button" bindtap="onnull">不设置</button>
+      <button class="button" bindtap="onAuthLocation" style="background:#f88b13;color:#fff">去设置</button>
+    </view>
+  </view>
+</view>

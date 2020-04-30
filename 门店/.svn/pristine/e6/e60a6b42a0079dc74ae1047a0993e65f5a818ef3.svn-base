@@ -1,0 +1,63 @@
+/* components/showgps/index.wxss */
+
+.modal_show {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #eee;
+  opacity: 0.8;
+  z-index: 99;
+}
+
+.modal_flex {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  /* background: #fff; */
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal_flex .modal{
+  width: 60%;
+  /* height: 400rpx; */
+  background: #fff;
+  padding: 40rpx;
+  border-radius: 30rpx;
+}
+.modal_flex .modal .title{
+  font-size: 26rpx;
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+}
+.modal_flex .modal .info{
+  font-size: 30rpx;
+  color: #000;
+  margin: 10rpx 0;
+}
+.button {
+  background: none;
+  border: none;
+  line-height: normal;
+  padding: 0;
+  margin: 0;
+}
+
+.button::after {
+  border: none;
+}
+.btns_on{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.btns_on .button{
+  font-size: 28rpx;
+  background: #eee;
+  text-align: center;
+  padding: 10rpx 20rpx;
+  width: 35%;
+  border-radius: 30rpx;
+}
